@@ -92,6 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
         '../files/sphc_meeting_with_your_ex_audio.mp3'
     );
 
+    handleAudioPlayer(
+        '.sh-communication-book-audio-btn',
+        '#communication-book-player',
+        '../files/sphc_communication_book_audio.mp3'
+    );
+
 
     // Login button functionality
     const loginBtn = document.querySelector('.login-btn');
