@@ -86,6 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
         '../files/sphc_supporting_children_see_you_audio.mp3'
     );
 
+    handleAudioPlayer(
+        '.sh-meeting-with-your-ex-audio-btn',
+        '#meeting-your-ex-player',
+        '../files/sphc_meeting_with_your_ex_audio.mp3'
+    );
+
 
     // Login button functionality
     const loginBtn = document.querySelector('.login-btn');
@@ -138,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Download What if Your Child Does Not Want to See You Audio Guide functionality
     // handleFileDownload('.sh-supporting-children-see-you-audio-btn', '../files/sphc_supporting_children_see_you_audio.mp3', 'sphc_supporting_children_see_you_audio.mp3');
 
+    // Download How to Hold a Constructive Meeting with Your Ex Guide functionality
+    handleFileDownload('.sh-meeting-with-your-ex-btn', '../files/sphc_meeting_with_your_ex.pdf', 'sphc_meeting_with_your_ex.pdf');
 
 
     // Download worksheet button functionality
