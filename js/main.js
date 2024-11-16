@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to handle HAMBURGER menu ----------------------------------------------------------------
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('header nav ul');
+    const overlay = document.querySelector('.menu-overlay');
     const body = document.body;
     let isMenuOpen = false;
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isMenuOpen) {
             navMenu.classList.add('show');
             body.classList.add('menu-open');
+            if (overlay) overlay.classList.add('show');
 
             // Add click outside listener
             setTimeout(() => {
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             navMenu.classList.remove('show');
             body.classList.remove('menu-open');
+            if (overlay) overlay.classList.remove('show');
             document.removeEventListener('click', closeMenuOnClickOutside);
         }
     }
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isMenuOpen = false;
             navMenu.classList.remove('show');
             body.classList.remove('menu-open');
+            if (overlay) overlay.classList.remove('show');
             document.removeEventListener('click', closeMenuOnClickOutside);
         }
     }
@@ -69,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isMenuOpen = false;
             navMenu.classList.remove('show');
             body.classList.remove('menu-open');
+            if (overlay) overlay.classList.remove('show');
         });
     });
 
