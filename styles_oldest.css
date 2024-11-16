@@ -5,7 +5,6 @@ body, ul {
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
 body * {
     font-family: 'Lato', sans-serif;
 }
@@ -30,19 +29,13 @@ header nav ul {
     align-items: center;
 }
 
-/* Logo Container Styles -------------------------------- */
-.logo-container {
-    position: relative;
-    z-index: 3; /* Higher than the nav items */
-}
-
 .logo-container img {
     display: inline-block;
     position: absolute;
     top: 0;
-    right: 0; /* Align to right */
     vertical-align: middle;
     margin: 0 7px;
+    z-index: 2;
 }
 
 .login-nav-item * {
@@ -136,10 +129,10 @@ header nav ul {
     color: #565656;
     font-size: 16px;
     padding: 10px 20px 20px 40px;
-    margin: 30px 110px 30px 50px; /* Optional: Adds space outside the frame */
-    border: 1px solid gray; /* Sets the border color and thickness */
-    border-radius: 10px; /* Rounds the corners slightly */
-    background-color: white; /* Optional: Sets a background color */
+    margin: 30px 110px 30px 50px;             /* Optional: Adds space outside the frame */
+    border: 1px solid gray;  /* Sets the border color and thickness */
+    border-radius: 10px;      /* Rounds the corners slightly */
+    background-color: white;  /* Optional: Sets a background color */
 }
 
 /* To make sure that the bullet points say inside of the frame */
@@ -150,18 +143,17 @@ header nav ul {
     /* padding-left: 20px; -- /* Adds some left padding to prevent overlap with frame border */
     margin: 0; /* Removes extra margin */
 }
-
 .fancy-frame li {
     padding-left: 0; /* Removes any extra padding that might push items outside */
     margin: 8px 0; /* Adds spacing between list items */
 }
 
 .container {
-    display: flex; /* Enables flexbox layout */
+    display: flex;              /* Enables flexbox layout */
     /* justify-content: space-between; /* Adjusts spacing between sections */
     gap: 90px; /* Adds 20px of space between items */
     flex-wrap: wrap;
-    vertical-align: bottom /* Allows wrapping to the next line if there's not enough space */
+    vertical-align: bottom/* Allows wrapping to the next line if there's not enough space */
 }
 
 .resource-container {
@@ -254,6 +246,7 @@ footer nav ul {
 
 @media (max-width: 768px) {
     /* General adjustments for mobile view */
+
     /* Logo and Header */
     header {
         display: flex;
@@ -263,10 +256,10 @@ footer nav ul {
     header nav ul {
         /* Center navigation items in mobile view */
         flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center each nav item */
-        text-align: center; /* Center-aligns text within each item */
-        justify-content: center; /* Center the entire list */
-        width: 100%; /* Ensures the nav items take full width */
+        align-items: center;  /* Center each nav item */
+        text-align: center;  /* Center-aligns text within each item */
+        justify-content: center;  /* Center the entire list */
+        width: 100%;  /* Ensures the nav items take full width */
         padding: 0; /* Removes any default padding */
         margin: 0; /* Removes any default margin */
     }
@@ -284,7 +277,7 @@ footer nav ul {
     }
 
     .nav-item {
-        margin: 8px 0; /* Add some spacing between each item */
+        margin: 8px 0;   /* Add some spacing between each item */
         width: 100%; /* Allows each item to center-align within the available space */
         text-align: center; /* Center-aligns text in each item */
     }
@@ -386,7 +379,6 @@ footer nav ul {
         transform-origin: top;
         transition: transform 0.3s ease;
     }
-
     header nav ul.show {
         transform: scaleY(1);
     }
@@ -394,7 +386,6 @@ footer nav ul {
     .nav-item {
         margin: 8px 0; /* More compact spacing */
     }
-
     .login-nav-item, .search-nav-item {
         order: 1; /* Brings login and search buttons at the top */
     }
@@ -464,134 +455,78 @@ footer nav ul {
 
 
 /* ---------------------------------------------------------------------------------- */
-/* HAMBURGER MENU ------------------------------------------------------------------- */
+/* HAMBURGER BUTTON ----------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 
-/* Hamburger Menu Base Styles */
+/* Hamburger icon styling */
 .hamburger {
-    display: none;
+    display: none; /* Hidden on desktop by default */
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
+    background: none;
+    border: none;
+    padding: 10px;
 }
 
 .hamburger .bar {
-    width: 100%;
+    display: block;
+    width: 25px;
     height: 3px;
-    background-color: #565656;
-    transition: all 0.3s ease-in-out;
-    border-radius: 2px;
-    transform-origin: left;
-    will-change: transform; /* Optimizes animations */
-}
-
-/* Mobile Navigation Styles */
-header nav {
-    width: 100%;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
+    margin: 4px 0;
+    background-color: #565656; /* Color of hamburger bars */
+    transition: 0.3s;
 }
 
 /* Show the hamburger icon on mobile BOTH IN PORTRAIT AND LANDSCAPE and hide the menu initially */
-/* substitute 900px with 768px to enable hamburger menu in portrait mode only! */
-@media (max-width: 900px) {
+                 /* substitute 900px with 768px to enable hamburger menu in portrait mode only! */
+    @media (max-width: 900px) {
     .hamburger {
         display: flex;
-        position: relative;
-        right: 0;
-        margin: 10px;
     }
 
     header nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        /* background: white; ------------ */
-        /* Semi-transparent background */
-        background: rgba(255, 255, 255, 0.7); /* Adjust the 0.7 value to control transparency */
-        /* Optional: Add backdrop filter for a frosted glass effect */
-        backdrop-filter: blur(8px);   /* Adjust the blur(8px) value to control the intensity of the frosted glass effect */
-        -webkit-backdrop-filter: blur(8px); /* For Safari */
-
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
-    }
-
-    header nav ul.show {
-        display: flex;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .nav-item {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack items vertically when shown */
         width: 100%;
         text-align: center;
-        padding: 10px 0;
-        /* Optional: Add hover effect for menu items */
-        transition: background-color 0.3s ease;
     }
 
-    .nav-item:hover {
-        background-color: rgba(255, 255, 255, 0.5); /* Lighter background on hover */
+    header nav ul.show { /* Class to show the menu when toggled */
+        display: flex;
     }
 }
 
-/* Fix for iOS Safari overflow issues */
-header {
-    position: relative;
-    z-index: 1000;
-    background: white;
+/* Add transitions effect to HAMBURGER button ----------------------------------------- */
+@media (max-width: 768px) {
+    /*header nav ul {*/
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*    width: 100%;*/
+    /*    text-align: center;*/
+    /*    max-height: 0; !* Collapse height by default *!*/
+    /*    overflow: hidden;*/
+    /*    transition: max-height 0.3s ease; !* Slide-down effect *!*/
+    /*}*/
+
+    /*header nav ul.show {*/
+    /*    max-height: 300px; !* Adjust based on content *!*/
+    /*}*/
+
+    header nav ul {
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+    header nav ul.show {
+        transform: scaleY(1);
+    }
+
 }
 
-/* Prevent body scrolling when menu is open */
-body.menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-/* Optional: Add a semi-transparent overlay behind the menu */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adjust the 0.3 value to control overlay background */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.menu-overlay.show {
-    display: block;
-    opacity: 1;
-}
-
-/* -------------------------------------------------------------------------------- */
-/*  AUDIO PLAYER STYLES ----------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
+/*  AUDIO PLAYER STYLES      ---------------------------------------------------------- */
 /* Add these styles to your existing CSS file */
 /* Simple audio player styles */
 .audio-player {
@@ -608,9 +543,11 @@ body.menu-open {
     background: #f5f5f5;
 }
 
+/* ADD PICTURES TO THE TEXT   ------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */
-/* ADD PICTURES TO THE TEXT   -------- tool-item Style ----------------------------- */
-/* --------------------------------------------------------------------------------- */
+
+/* Add this CSS to your existing styles.css file -- */
+
 .tool-item {
     display: flex;
     gap: 20px;
@@ -630,7 +567,7 @@ body.menu-open {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .tool-item-buttons {
@@ -639,7 +576,7 @@ body.menu-open {
     margin-top: 15px;
 }
 
-/* Responsive adjustments ------- */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .tool-item {
         flex-direction: column;

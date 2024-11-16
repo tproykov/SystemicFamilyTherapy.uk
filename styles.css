@@ -10,35 +10,70 @@ body * {
     font-family: 'Lato', sans-serif;
 }
 
+/* Header layout ------------------------------------- */
 header {
-    box-shadow: 0 3px 8px -4px #ccc;
     position: relative;
-    padding: 20px 40px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-end;
+    padding: 20px 40px;
     z-index: 1;
 }
 
 .page-header {
-    box-shadow: 0 3px 8px -4px #ccc;
+    box-shadow: 0 3px 8px -4px #ccc
+}
+
+/* Navigation menu positioning ------------------------ */
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Aligns menu items to the left */
 }
 
 header nav ul {
     display: flex;
     list-style: none;
     align-items: center;
+    margin-right: auto; /* Pushes items to the left */
+    padding-left: 0;
+}
+
+/* Logo Container Styles -------------------------------- */
+.logo-container {
+    position: relative;
+    z-index: 3; /* Higher than the nav items */
 }
 
 .logo-container img {
     display: inline-block;
     position: absolute;
     top: 0;
+    right: 0; /* Align to right */
     vertical-align: middle;
     margin: 0 7px;
-    z-index: 2;
 }
 
+/* Media query for mobile view ------------------------- */
+@media (max-width: 900px) {
+    .logo-container {
+        position: static;
+        margin-right: auto;
+    }
+
+    .logo-container img {
+        position: static;
+        display: block;
+        margin: 0;
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+}
+
+/* Navigation menu items ---- look at these closer! ---- */
 .login-nav-item * {
     display: inline-block;
     vertical-align: middle;
