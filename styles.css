@@ -150,7 +150,7 @@ header nav ul {
 
 .container {
     display: flex;              /* Enables flexbox layout */
-    justify-content: space-around; /* Adjusts spacing between sections */
+    justify-content: space-between; /* Adjusts spacing between sections */
     flex-wrap: wrap;
     vertical-align: bottom/* Allows wrapping to the next line if there's not enough space */
 }

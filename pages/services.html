@@ -6,17 +6,29 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-DZJSGW8GN8');
     </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MHLWL5NJ');</script>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MHLWL5NJ');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,8 +40,10 @@
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header>
@@ -67,37 +81,33 @@
             sessions, family therapy sessions, couple therapy, online consultations, and clinical supervision.
     </section>
 
-    <section class="fancy-frame"><h3>All therapy sessions are conducted online via secure GDPR-compliant video platform.</h3></section>
+    <section class="fancy-frame"><h3>All therapy sessions are conducted online via secure GDPR-compliant video
+        platform.</h3></section>
 
     <section class="fancy-frame">
-        <section class="container">
-            <div class="service-item">
-                <h3>Family therapy with separated families experiencing child contact difficulties</h3>
-                <p>This highly specialised type of therapy is aimed to:</p>
-                <ul>
-                    <li>Improve the communication between parents</li>
-                    <li>Address difficulties in the child contact</li>
-                    <li>Support parents in responding to children’s feelings and behaviours</li>
-                    <li>Work on strategies of both parents meeting their own emotional needs</li>
-                </ul>
-                <p>Sessions: 60 minutes | Available evenings and weekends</p>
+        <div class="resource-container">
+            <div class="tool-item">
+                <img src="../images/separated_parents.jpg" alt="Separated parents" class="tool-item-image">
+                <div class="tool-item-content">
 
-                <button class="btn download-btn">Download package with further information about this
-                    service
-                </button>
-
+                    <h3>Family therapy with separated parents experiencing child contact difficulties</h3>
+                    <p>This highly specialised type of therapy is aimed to:</p>
+                    <ul>
+                        <li>Improve the communication between parents</li>
+                        <li>Address difficulties in the child contact</li>
+                        <li>Support parents in responding to children’s feelings and behaviours</li>
+                        <li>Work on strategies of both parents meeting their own emotional needs</li>
+                    </ul>
+                    <p></p>
+                    <button class="btn download-btn">Download information package</button>
+                </div>
             </div>
-
-            <div class="illustration">
-                <img class="illustration" src="../images/separated.jpg" alt="Separated parents">
-            </div>
-
-        </section>
+        </div>
 
     </section>
 
-    <section class="container">
-        <section class="fancy-frame">
+    <section class="fancy-frame">
+        <section class="container">
 
             <div class="service-item">
                 <h3>Family Therapy</h3>
@@ -125,8 +135,10 @@
                 <p>Sessions: 60 minutes | Available evenings and weekends</p>
             </div>
         </section>
-        <section class="fancy-frame">
+    </section>
 
+    <section class="fancy-frame">
+        <section class="container">
             <div class="service-item">
                 <h3>Individual Therapy</h3>
                 <p>Personal therapeutic support using systemic approaches for:</p>
@@ -152,6 +164,7 @@
             </div>
         </section>
     </section>
+
     <section class="fancy-frame">
 
         <div class="booking-info">
@@ -193,7 +206,8 @@
     <!-- Centered copyright container -->
     <div class="footer-copyright">
         <p>&copy; 2024 - Dr Todor Proykov. All Rights Reserved.</p>
-        <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with
+        <p>The code of this website, the majority of the images and audio, and some of the materials here have been
+            prepared with
             the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
         <p>All logos and organisation names used here are property of their respective owners.</p>
     </div>
@@ -204,7 +218,7 @@
 <!-- JAVASCRIPT TO TOGGLE THE HAMBURGER MENU ON MOBILE DEVICES ------------------------ -->
 <script>
     // JavaScript to toggle the menu
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector("header nav ul");
 
