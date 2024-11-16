@@ -147,6 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Download How to Hold a Constructive Meeting with Your Ex Guide functionality
     handleFileDownload('.sh-meeting-with-your-ex-btn', '../files/sphc_meeting_with_your_ex.pdf', 'sphc_meeting_with_your_ex.pdf');
 
+    // Download How to Use a Communication Book in Co-Parenting Guide functionality
+    handleFileDownload('.sh-communication-book-btn', '../files/sphc_communication_book.pdf', 'sphc_communication_book.pdf');
 
     // Download worksheet button functionality
     const downloadWorksheetBtn = document.querySelector('.sh-worksheet-btn');
