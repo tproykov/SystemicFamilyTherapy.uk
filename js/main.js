@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to handle file downloads
+    // Functions to handle file DOWNLOADS ------------------------------------------------------------
     function handleFileDownload(selector, filePath, fileName) {
         const downloadBtn = document.querySelector(selector);
         if (downloadBtn) {
@@ -13,17 +13,67 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Hamburger menu toggle
+    // Function to handle HAMBURGER menu ----------------------------------------------------------------
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('header nav ul');
+    const body = document.body;
+    let isMenuOpen = false;
 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function () {
-            navMenu.classList.toggle('show');
-        });
+    function toggleMenu(event) {
+        event.preventDefault(); // Prevent any default behavior
+        event.stopPropagation(); // Stop event bubbling
+
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+            navMenu.classList.add('show');
+            body.classList.add('menu-open');
+
+            // Add click outside listener
+            setTimeout(() => {
+                document.addEventListener('click', closeMenuOnClickOutside);
+            }, 0);
+        } else {
+            navMenu.classList.remove('show');
+            body.classList.remove('menu-open');
+            document.removeEventListener('click', closeMenuOnClickOutside);
+        }
     }
 
-    // Function to handle audio players
+    function closeMenuOnClickOutside(event) {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            isMenuOpen = false;
+            navMenu.classList.remove('show');
+            body.classList.remove('menu-open');
+            document.removeEventListener('click', closeMenuOnClickOutside);
+        }
+    }
+
+    // Touch event handlers
+    function handleTouchStart(event) {
+        if (event.touches.length === 1) {
+            toggleMenu(event);
+        }
+    }
+
+    // Add event listeners
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('touchstart', handleTouchStart, { passive: false });
+    }
+
+    // Close menu on link click
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            navMenu.classList.remove('show');
+            body.classList.remove('menu-open');
+        });
+    });
+
+
+    // Function to handle AUDIO players ---------------------------------------------------------------
     function handleAudioPlayer(buttonSelector, playerSelector, audioPath) {
         const audioBtn = document.querySelector(buttonSelector);
         const audioPlayer = document.querySelector(playerSelector);
@@ -59,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-    }
+    }  // -------------------------------------------------------------------------------------------------
 
     // Initialize audio players
     handleAudioPlayer(
@@ -98,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
         '../files/sphc_communication_book_audio.mp3'
     );
 
-
+    // BUTTON functionalities ---------------------------------------------------------------------------
+    // NOT OPERATIONAL yet ----------------------------
     // Login button functionality
     const loginBtn = document.querySelector('.login-btn');
     if (loginBtn) {
@@ -123,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // OPERATIONAL buttons ------------------------------
     // Download button functionality
     handleFileDownload('.download-btn', '../files/ftsf_info_leaflet.pdf', 'ftsf_info_leaflet.pdf');
 
@@ -164,47 +216,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Download template button functionality
-    const downloadTemplateBtn = document.querySelector('.sh-template-btn');
-    if (downloadTemplateBtn) {
-        downloadTemplateBtn.addEventListener('click', function () {
-            alert('Download template functionality coming soon!');
-        });
-    }
-
-    // Download guide 1 button functionality
-    const downloadGuide1Btn = document.querySelector('.sh-guide1-btn');
-    if (downloadGuide1Btn) {
-        downloadGuide1Btn.addEventListener('click', function () {
-            alert('Download guide functionality coming soon!');
-        });
-    }
-
-    // Download guide 2 button functionality
-    const downloadGuide2Btn = document.querySelector('.sh-guide2-btn');
-    if (downloadGuide2Btn) {
-        downloadGuide2Btn.addEventListener('click', function () {
-            alert('Download guide functionality coming soon!');
-        });
-    }
-
-    // Add active state to current navigation item
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === 'index.html' && href === '#')) {
-            link.style.color = '#8ec545';
-        }
-    });
-
-    // HAMBURGER BUTTON FUNCTIONALITY --------------------------------------------------------
-    // JavaScript to toggle the menu
-    // const hamburger = document.querySelector(".hamburger");
-    // const navMenu = document.querySelector("header nav ul");
-    //
-    // hamburger.addEventListener("click", () => {
-    //     navMenu.classList.toggle("show");
-    // });
 });

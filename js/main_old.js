@@ -1,5 +1,104 @@
-// main.js
 document.addEventListener('DOMContentLoaded', function () {
+    // Function to handle file downloads
+    function handleFileDownload(selector, filePath, fileName) {
+        const downloadBtn = document.querySelector(selector);
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function () {
+                // Trigger file download
+                const link = document.createElement('a');
+                link.href = filePath;
+                link.download = fileName;
+                link.click();
+            });
+        }
+    }
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('header nav ul');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function () {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Function to handle audio players
+    function handleAudioPlayer(buttonSelector, playerSelector, audioPath) {
+        const audioBtn = document.querySelector(buttonSelector);
+        const audioPlayer = document.querySelector(playerSelector);
+
+        if (audioBtn && audioPlayer) {
+            audioBtn.addEventListener('click', function() {
+                const audio = audioPlayer.querySelector('audio');
+
+                // Toggle player visibility
+                if (audioPlayer.style.display === 'none') {
+                    // Hide all other players first
+                    document.querySelectorAll('.audio-player').forEach(player => {
+                        player.style.display = 'none';
+                        const playerAudio = player.querySelector('audio');
+                        if (playerAudio) {
+                            playerAudio.pause();
+                        }
+                    });
+
+                    // Show and play this player
+                    audioPlayer.style.display = 'block';
+                    if (audio) {
+                        audio.play();
+                    }
+                    audioBtn.textContent = 'Pause Audio';
+                } else {
+                    // Hide and pause this player
+                    audioPlayer.style.display = 'none';
+                    if (audio) {
+                        audio.pause();
+                    }
+                    audioBtn.textContent = 'Play Audio';
+                }
+            });
+        }
+    }
+
+    // Initialize audio players
+    handleAudioPlayer(
+        '.sh-survival-guide-audio-btn',
+        '#survival-guide-player',
+        '../files/sphc_survival_guide_audio.mp3'
+    );
+
+    handleAudioPlayer(
+        '.sh-comm-children-guide-audio-btn',
+        '#comm-children-player',
+        '../files/sphc_comm_children_guide_audio.mp3'
+    );
+
+    handleAudioPlayer(
+        '.sh-supporting-children-have-contact-audio-btn',
+        '#supporting-contact-player',
+        '../files/sphc_supporting_contact_audio.mp3'
+    );
+
+    handleAudioPlayer(
+        '.sh-supporting-children-see-you-audio-btn',
+        '#supporting-see-you-player',
+        '../files/sphc_supporting_children_see_you_audio.mp3'
+    );
+
+    handleAudioPlayer(
+        '.sh-meeting-with-your-ex-audio-btn',
+        '#meeting-your-ex-player',
+        '../files/sphc_meeting_with_your_ex_audio.mp3'
+    );
+
+    handleAudioPlayer(
+        '.sh-communication-book-audio-btn',
+        '#communication-book-player',
+        '../files/sphc_communication_book_audio.mp3'
+    );
+
+
     // Login button functionality
     const loginBtn = document.querySelector('.login-btn');
     if (loginBtn) {
@@ -25,88 +124,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Download button functionality
-    const downloadBtn = document.querySelector('.download-btn');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/ftsf_info_leaflet.pdf';
-            link.download = 'ftsf_info_leaflet.pdf';
-            link.click();
-        });
-    }
+    handleFileDownload('.download-btn', '../files/ftsf_info_leaflet.pdf', 'ftsf_info_leaflet.pdf');
 
     // Download Survival Guide button functionality
-    const downloadSurvivalBtn = document.querySelector('.sh-survival-guide-btn');
-    if (downloadSurvivalBtn) {
-        downloadSurvivalBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_survival_guide.pdf';
-            link.download = 'sphc_survival_guide.pdf';
-            link.click();
-        });
-    }
+    handleFileDownload('.sh-survival-guide-btn', '../files/sphc_survival_guide.pdf', 'sphc_survival_guide.pdf');
 
     // Download Survival Audio Guide button functionality
-    const downloadSurvivalAudioBtn = document.querySelector('.sh-survival-guide-audio-btn');
-    if (downloadSurvivalAudioBtn) {
-        downloadSurvivalAudioBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_survival_guide_audio.mp3';
-            link.download = 'sphc_survival_guide_audio.mp3';
-            link.click();
-        });
-    }
+    // handleFileDownload('.sh-survival-guide-audio-btn', '../files/sphc_survival_guide_audio.mp3', 'sphc_survival_guide_audio.mp3');
 
     // Download How to Communicate with Your Child Guide functionality
-    const downloadCommChildBtn = document.querySelector('.sh-comm-children-guide-btn');
-    if (downloadCommChildBtn) {
-        downloadCommChildBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_comm_children_guide.pdf';
-            link.download = 'sphc_comm_children_guide.pdf';
-            link.click();
-        });
-    }
+    handleFileDownload('.sh-comm-children-guide-btn', '../files/sphc_comm_children_guide.pdf', 'sphc_comm_children_guide.pdf');
 
     // Download How to Communicate with Your Child Audio Guide functionality
-    const downloadCommChildAudioBtn = document.querySelector('.sh-comm-children-guide-audio-btn');
-    if (downloadCommChildAudioBtn) {
-        downloadCommChildAudioBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_comm_children_guide_audio.mp3';
-            link.download = 'sphc_comm_children_guide_audio.mp3';
-            link.click();
-        });
-    }
+    // handleFileDownload('.sh-comm-children-guide-audio-btn', '../files/sphc_comm_children_guide_audio.mp3', 'sphc_comm_children_guide_audio.mp3');
 
     // Download How to Support Contact Guide functionality
-    const downloadSuppChildBtn = document.querySelector('.sh-supporting-children-have-contact-btn');
-    if (downloadSuppChildBtn) {
-        downloadSuppChildBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_supporting_contact.pdf';
-            link.download = 'sphc_supporting_contact.pdf';
-            link.click();
-        });
-    }
+    handleFileDownload('.sh-supporting-children-have-contact-btn', '../files/sphc_supporting_contact.pdf', 'sphc_supporting_contact.pdf');
 
     // Download How to Support Contact Audio Guide functionality
-    const downloadSuppChildAudioBtn = document.querySelector('.sh-supporting-children-have-contact-audio-btn');
-    if (downloadSuppChildAudioBtn) {
-        downloadSuppChildAudioBtn.addEventListener('click', function () {
-            // Trigger file download
-            const link = document.createElement('a');
-            link.href = '../files/sphc_supporting_contact_audio.mp3';
-            link.download = 'sphc_supporting_contact_audio.mp3';
-            link.click();
-        });
-    }
+    // handleFileDownload('.sh-supporting-children-have-contact-audio-btn', '../files/sphc_supporting_contact_audio.mp3', 'sphc_supporting_contact_audio.mp3');
+
+    // Download What if Your Child Does Not Want to See You Guide functionality
+    handleFileDownload('.sh-supporting-children-see-you-btn', '../files/sphc_supporting_children_see_you.pdf', 'sphc_supporting_children_see_you.pdf');
+
+    // Download What if Your Child Does Not Want to See You Audio Guide functionality
+    // handleFileDownload('.sh-supporting-children-see-you-audio-btn', '../files/sphc_supporting_children_see_you_audio.mp3', 'sphc_supporting_children_see_you_audio.mp3');
+
+    // Download How to Hold a Constructive Meeting with Your Ex Guide functionality
+    handleFileDownload('.sh-meeting-with-your-ex-btn', '../files/sphc_meeting_with_your_ex.pdf', 'sphc_meeting_with_your_ex.pdf');
+
+    // Download How to Use a Communication Book in Co-Parenting Guide functionality
+    handleFileDownload('.sh-communication-book-btn', '../files/sphc_communication_book.pdf', 'sphc_communication_book.pdf');
 
     // Download worksheet button functionality
     const downloadWorksheetBtn = document.querySelector('.sh-worksheet-btn');
@@ -149,18 +197,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (href === currentPage || (currentPage === 'index.html' && href === '#')) {
             link.style.color = '#8ec545';
         }
-    }); // Close the forEach method
+    });
 
     // HAMBURGER BUTTON FUNCTIONALITY --------------------------------------------------------
     // JavaScript to toggle the menu
-    document.addEventListener("DOMContentLoaded", function() {
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector("header nav ul");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
-        });
-    });
-
-
-}); // Close the DOMContentLoaded event (Starts from the start)
+    // const hamburger = document.querySelector(".hamburger");
+    // const navMenu = document.querySelector("header nav ul");
+    //
+    // hamburger.addEventListener("click", () => {
+    //     navMenu.classList.toggle("show");
+    // });
+});
