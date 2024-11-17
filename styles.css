@@ -481,14 +481,17 @@ footer nav ul {
     }
 
     .tool-items-container {
-        grid-template-columns: 1fr; /* Force single column on mobile */
-        padding: 15px;
+        grid-template-columns: 1fr;
+        padding: 10px; /* Reduced container padding */
         gap: 15px;
     }
 
     .tool-item {
         flex-direction: column;
-        padding: 15px;
+        margin: 10px 8px; /* Reduced margin */
+        padding: 20px; /* Slightly increased padding inside the item */
+        width: auto; /* Let it expand */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow */
     }
 
     .tool-item-content {
@@ -503,18 +506,17 @@ footer nav ul {
     }
 
     .tool-item-buttons {
-        gap: 8px; /* Reduce gap between buttons */
+        gap: 8px;
         justify-content: center;
-        flex-wrap: nowrap; /* Prevent wrapping */
+        flex-wrap: nowrap;
     }
 
-    /* Adjust buttons within tool items for mobile */
     .tool-item .btn {
-        padding: 8px 12px; /* Smaller padding */
-        font-size: 14px; /* Slightly smaller font */
-        white-space: nowrap; /* Prevent text wrapping */
-        min-width: 0; /* Allow buttons to be narrower */
-        flex: 1; /* Allow buttons to share space equally */
+        padding: 8px 12px;
+        font-size: 14px;
+        white-space: nowrap;
+        min-width: 0;
+        flex: 1;
     }
 
     /* Footer */
@@ -573,12 +575,12 @@ footer nav ul {
 /* For very small screens */
 @media (max-width: 480px) {
     .tool-items-container {
-        padding: 10px;
-        gap: 10px;
+        padding: 8px;
     }
 
     .tool-item {
-        margin: 15px 10px; /* Even smaller margins for very small screens */
+        margin: 8px 5px; /* Even smaller margin for very small screens */
+        padding: 15px; /* Slightly reduced padding */
     }
 
     .tool-item .btn {
