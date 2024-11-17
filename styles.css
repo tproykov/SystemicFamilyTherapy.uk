@@ -1,95 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* ==========================================================================
+   TABLE OF CONTENTS
+   1. CSS Reset & Base Styles
+   2. Typography
+   3. Layout & Grid
+   4. Header & Navigation
+   5. Main Content Sections
+   6. Components
+   7. Footer
+   8. Utilities
+   9. Media Queries
+   ========================================================================== */
 
+/* ==========================================================================
+   1. CSS Reset & Base Styles
+   ========================================================================== */
 body, ul {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
 }
 
+/* ==========================================================================
+   2. Typography
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Apply Lato font globally */
+body,
 body * {
     font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #565656;
 }
 
-/* Header layout ------------------------------------- */
+/* ==========================================================================
+   3. Layout & Grid
+   ========================================================================== */
+.container {
+    display: flex;
+    gap: 90px;
+    flex-wrap: wrap;
+    vertical-align: bottom;
+}
+
+.resource-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.resource-section {
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: 48%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   4. Header & Navigation
+   ========================================================================== */
 header {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px 40px;
-    z-index: 1;
+    z-index: 1000;
+    background: white;
 }
 
-.page-header {
-    box-shadow: 0 3px 8px -4px #ccc
+/* Logo styles */
+.logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: auto;
 }
 
-/* Navigation menu positioning ------------------------ */
+.logo-container img {
+    display: block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+/* Navigation styles */
 header nav {
     flex: 1;
     display: flex;
-    justify-content: flex-start; /* Aligns menu items to the left */
+    justify-content: flex-end;
+    z-index: 100;
 }
 
 header nav ul {
     display: flex;
     list-style: none;
     align-items: center;
-    margin-right: auto; /* Pushes items to the left */
+    margin-left: auto;
     padding-left: 0;
-}
-
-/* Logo Container Styles -------------------------------- */
-.logo-container {
-    position: relative;
-    z-index: 3; /* Higher than the nav items */
-}
-
-.logo-container img {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0; /* Align to right */
-    vertical-align: middle;
-    margin: 0 7px;
-}
-
-/* Media query for mobile view ------------------------- */
-@media (max-width: 900px) {
-    .logo-container {
-        position: static;
-        margin-right: auto;
-    }
-
-    .logo-container img {
-        position: static;
-        display: block;
-        margin: 0;
-    }
-
-    header {
-        justify-content: space-between;
-        padding: 10px 20px;
-    }
-}
-
-/* Navigation menu items ---- look at these closer! ---- */
-.login-nav-item * {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.search-nav-item {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.login-btn {
-    margin-left: 10px;
 }
 
 .nav-item {
     margin: 0 10px;
+    position: relative;
+    z-index: 100;
 }
 
 .nav-link {
@@ -103,6 +119,70 @@ header nav ul {
     cursor: pointer;
 }
 
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #565656;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+    transform-origin: left;
+    will-change: transform;
+}
+
+/* ==========================================================================
+   5. Main Content Sections
+   ========================================================================== */
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.transparent-section {
+    color: #fff;
+    background: rgba(141, 200, 71, 0.5) url("/images/img02.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding: 60px 270px 90px 390px;
+    z-index: 1;
+}
+
+.transparent-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(141, 200, 71, 0.9);
+    z-index: -1;
+}
+
+.transparent-section h1 {
+    font-size: 30px;
+}
+
+/* ==========================================================================
+   6. Components
+   ========================================================================== */
+/* Buttons */
 .btn {
     background: #8ec545;
     color: #fff;
@@ -113,117 +193,60 @@ header nav ul {
     box-shadow: 0 3px 8px -4px #ccc;
 }
 
-.transparent-section {
-    color: #fff;
-    background-size: cover; /* Makes the image cover the whole section */
-    /* Prevents the image from repeating */
-    background: rgba(141, 200, 71, 0.5) url("/images/img02.jpg") no-repeat center;
-    position: relative;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    padding: 60px 270px 90px 390px;
-    z-index: 1;
-}
-
-.transparent-section::before {
-    content: '';
-    position: absolute;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(141, 200, 71, 0.9);
-    z-index: -1;
-}
-
-.transparent-section h1 {
-    font-family: 'Lato', sans-serif;
-    font-size: 30px;
-}
-
-.photo-container img {
-    display: inline-block;
-    position: absolute;
-    top: 260px;
-    right: 5px;
-    max-width: 100%;
-    vertical-align: middle;
-    margin: 0 7px;
-    z-index: 2;
-}
-
-.program-content {
-    text-align: center;
-    padding: 0 20px 20px 20px;
-}
-
+/* Fancy Frame */
 .fancy-frame {
-    font-family: 'Lato', sans-serif;
-    color: #565656;
-    font-size: 16px;
     padding: 10px 20px 20px 40px;
-    margin: 30px 110px 30px 50px; /* Optional: Adds space outside the frame */
-    border: 1px solid gray; /* Sets the border color and thickness */
-    border-radius: 10px; /* Rounds the corners slightly */
-    background-color: white; /* Optional: Sets a background color */
+    margin: 30px 110px 30px 50px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* To make sure that the bullet points say inside of the frame */
 .fancy-frame ul {
-    list-style-type: disc; /* Change to disc or other bullet style */
-    list-style-position: inside; /* Keeps bullets inside the padding */
-    padding-left: 1.5em; /* Fine-tunes bullet positioning */
-    /* padding-left: 20px; -- /* Adds some left padding to prevent overlap with frame border */
-    margin: 0; /* Removes extra margin */
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 1.5em;
+    margin: 0;
 }
 
 .fancy-frame li {
-    padding-left: 0; /* Removes any extra padding that might push items outside */
-    margin: 8px 0; /* Adds spacing between list items */
+    padding-left: 0;
+    margin: 8px 0;
 }
 
-.container {
-    display: flex; /* Enables flexbox layout */
-    /* justify-content: space-between; /* Adjusts spacing between sections */
-    gap: 90px; /* Adds 20px of space between items */
-    flex-wrap: wrap;
-    vertical-align: bottom /* Allows wrapping to the next line if there's not enough space */
-}
-
-.resource-container {
+/* Tool Item */
+.tool-item {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next row */
-    gap: 20px; /* Adds space between the two sections */
-    justify-content: space-between; /* Aligns sections on the same line */
-    /* justify-content: center; /* Centers the items horizontally (optional) */
+    gap: 20px;
+    align-items: flex-start;
+    margin: 30px 110px 30px 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 160px);
 }
 
-.resource-section {
-    flex: 1 1 calc(33.33% - 40px); /* Each item takes 1/3 of the container width minus the gap */
-    max-width: 48%; /* Keeps sections responsive */
-    display: flex; /* Enables flexbox layout within each section */
-    gap: 20px; /* Adds spacing between items */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    justify-content: space-between; /* Aligns the two items horizontally */
+/* Audio Player */
+.audio-player {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #f5f5f5;
+    border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-    .resource-container {
-        flex-direction: column; /* Stacks the sections on smaller screens */
-    }
-
-    .resource-section {
-        max-width: 100%;
-    }
+.audio-player audio {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background: #f5f5f5;
 }
 
-.illustration {
-    max-width: 360px;
-}
-
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
 .page-footer {
     background-color: #444549;
     color: #fff;
@@ -244,15 +267,6 @@ header nav ul {
     text-decoration: none;
 }
 
-footer nav ul {
-    position: relative;
-    padding: 20px 40px;
-    display: flex;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-}
-
 .footer-logo-container img {
     width: 80px;
 }
@@ -261,281 +275,43 @@ footer nav ul {
     margin: 15px;
 }
 
-.social-media ul {
-    display: flex;
-}
-
-.social-media ul li {
-    margin: 10px 10px;
-    list-style: none;
-}
-
 .footer-copyright {
     width: 100%;
     text-align: center;
     margin-top: 20px;
 }
 
-/* ADJUST FOR MOBILE DEVICES ------ 768px -----------------*/
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-
-@media (max-width: 768px) {
-    /* General adjustments for mobile view */
-    /* Logo and Header */
-    header {
-        display: flex;
-        justify-content: center; /* Better alignment on mobile */
-    }
-
-    header nav ul {
-        /* Center navigation items in mobile view */
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center each nav item */
-        text-align: center; /* Center-aligns text within each item */
-        justify-content: center; /* Center the entire list */
-        width: 100%; /* Ensures the nav items take full width */
-        padding: 0; /* Removes any default padding */
-        margin: 0; /* Removes any default margin */
-    }
-
-    .logo-container img {
-        position: static; /* Prevent overlapping on small screens */
-        margin: 0 auto;
-        display: block; /* Centers the logo on mobile */
-    }
-
-    header nav {
-        display: flex;
-        justify-content: center; /* Centers the ul within nav */
-        width: 100%;
-    }
-
-    .nav-item {
-        margin: 8px 0; /* Add some spacing between each item */
-        width: 100%; /* Allows each item to center-align within the available space */
-        text-align: center; /* Center-aligns text in each item */
-    }
-
-    /* Transparent Section */
-    .transparent-section {
-        padding: 20px; /* Reduces padding for better fit */
-        font-size: 14px; /* Slightly smaller font */
-        background-position: center;
-    }
-
-    .transparent-section h1 {
-        font-size: 24px; /* Adjusts title size */
-    }
-
-    /* Photo Container */
-    .photo-container img {
-        position: static;
-        margin: 20px auto;
-        display: block;
-        max-width: 100%;
-    }
-
-    /* Fancy Frame */
-    .fancy-frame {
-        margin: 20px;
-        padding: 20px;
-        font-size: 14px; /* Smaller text for mobile */
-    }
-
-    /* Footer Adjustments */
-    .page-footer {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center-align all footer items */
-        text-align: center; /* Center text for consistency */
-        padding: 20px;
-    }
-
-    .footer-menu,
-    .footer-logo-container,
-    .footer-social {
-        margin: 10px 0; /* Add margin between footer sections */
-        width: 100%; /* Ensure sections take full width */
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer-menu ul {
-        list-style: none; /* Remove bullet points */
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center-align each item */
-    }
-
-    .footer-menu li {
-        margin: 8px 0; /* Adds spacing between each link */
-        width: 100%; /* Ensure each item spans full width */
-        text-align: center; /* Center text within each item */
-    }
-
-    .footer-social ul {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-social ul li {
-        margin: 0 8px; /* Space between social icons */
-    }
-
-    .footer-logo-container img {
-        width: 60px; /* Adjust logo size for smaller screens */
-        margin: 10px 0;
-    }
-
-    .footer-copyright {
-        margin-top: 15px;
-        width: 100%;
-        text-align: center;
-    }
+/* ==========================================================================
+   8. Utilities
+   ========================================================================== */
+.illustration {
+    max-width: 360px;
 }
 
-/* prevent the navigation items from wrapping or overflowing, stack them vertically on smaller screens */
-/* ADJUST FOR MOBILE DEVICES ------ 600px ----------------- */
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-
-@media (max-width: 600px) {
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul {
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.3s ease;
-    }
-
-    header nav ul.show {
-        transform: scaleY(1);
-    }
-
-    .nav-item {
-        margin: 8px 0; /* More compact spacing */
-    }
-
-    .login-nav-item, .search-nav-item {
-        order: 1; /* Brings login and search buttons at the top */
-    }
-}
-
-/* prevent the navigation items from wrapping or overflowing, stack them vertically on smaller screens */
-/* ADJUST FOR LANDSCAPE MODE ON MOBILE  DEVICES ----------- */
-/* -------------------------------------------------------- */
-/* ------------------ 900px---X---500px ------------------- */
-/* -------------------------------------------------------- */
-
-/* Adjust Width and Padding for Landscape Mode on Mobile */
-@media (max-width: 900px) and (max-height: 500px) {
-    /* Adjust sections to take up more width on landscape */
-    .transparent-section {
-        padding: 20px; /* Reduce padding */
-        font-size: 14px; /* Slightly smaller font if necessary */
-    }
-
-    .fancy-frame {
-        margin: 10px; /* Reduce margins for more space */
-        padding: 15px 20px; /* Reduce padding to give more room */
-        font-size: 15px; /* Slightly smaller font for readability */
-    }
-
-    /* Center main content */
-    main {
-        padding: 0 10px;
-    }
-}
-
-/* Adjust Header and Footer for Landscape */
-@media (max-width: 900px) and (max-height: 500px) {
-    /* Header adjustments */
-    header {
-        display: flex;
-        justify-content: space-between; /* Space between logo and hamburger icon */
-        align-items: center;
-        padding: 10px 20px; /* Adjust padding for a tighter fit */
-    }
-
-    .logo-container {
-        flex-grow: 1; /* Allows the logo to take up available space */
-        display: flex;
-        justify-content: center;
-    }
-
-    .hamburger {
-        margin-right: 10px; /* Adds space between the hamburger icon and the edge */
-    }
-
-    /* Footer adjustments */
-    .page-footer {
-        padding: 10px; /* Reduce padding to fit more content */
-    }
-}
-
-/* Ensure Full Width for Text Content */
-@media (max-width: 900px) and (max-height: 500px) {
-    .transparent-section, .fancy-frame, .container, .resource-container {
-        width: 100%; /* Ensures full width on landscape mode */
-        max-width: 100%; /* Prevents any unintended narrowing */
-        padding: 10px; /* Reduces padding to allow more space */
-        margin: 0 auto; /* Centers the content */
-    }
-}
-
-
-/* ---------------------------------------------------------------------------------- */
-/* HAMBURGER MENU ------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------- */
-
-/* Hamburger Menu Base Styles */
-.hamburger {
+/* Menu overlay for mobile */
+.menu-overlay {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
-}
-
-.hamburger .bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 3px;
-    background-color: #565656;
-    transition: all 0.3s ease-in-out;
-    border-radius: 2px;
-    transform-origin: left;
-    will-change: transform; /* Optimizes animations */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* Mobile Navigation Styles */
-header nav {
-    width: 100%;
+.menu-overlay.show {
+    display: block;
+    opacity: 1;
 }
 
-header nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-/* Show the hamburger icon on mobile BOTH IN PORTRAIT AND LANDSCAPE and hide the menu initially */
-/* substitute 900px with 768px to enable hamburger menu in portrait mode only! */
+/* ==========================================================================
+   9. Media Queries
+   ========================================================================== */
+/* Tablet and smaller desktops */
 @media (max-width: 900px) {
+    /* Header adjustments */
     .hamburger {
         display: flex;
         position: relative;
@@ -549,138 +325,77 @@ header nav ul {
         top: 100%;
         left: 0;
         width: 100%;
-        /* background: white; ------------ */
-        /* Semi-transparent background */
-        background: rgba(255, 255, 255, 0.7); /* Adjust the 0.7 value to control transparency */
-        /* Optional: Add backdrop filter for a frosted glass effect */
-        backdrop-filter: blur(8px);   /* Adjust the blur(8px) value to control the intensity of the frosted glass effect */
-        -webkit-backdrop-filter: blur(8px); /* For Safari */
-
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         flex-direction: column;
         padding: 20px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+        margin: 0;
+        z-index: 1000;
     }
 
     header nav ul.show {
         display: flex;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .nav-item {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        /* Optional: Add hover effect for menu items */
-        transition: background-color 0.3s ease;
-    }
-
-    .nav-item:hover {
-        background-color: rgba(255, 255, 255, 0.5); /* Lighter background on hover */
     }
 }
 
-/* Fix for iOS Safari overflow issues */
-header {
-    position: relative;
-    z-index: 1000;
-    background: white;
-}
-
-/* Prevent body scrolling when menu is open */
-body.menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-/* Optional: Add a semi-transparent overlay behind the menu */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adjust the 0.3 value to control overlay background */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.menu-overlay.show {
-    display: block;
-    opacity: 1;
-}
-
-/* -------------------------------------------------------------------------------- */
-/*  AUDIO PLAYER STYLES ----------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* Add these styles to your existing CSS file */
-/* Simple audio player styles */
-.audio-player {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background: #f5f5f5;
-    border-radius: 4px;
-}
-
-.audio-player audio {
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    background: #f5f5f5;
-}
-
-/* --------------------------------------------------------------------------------- */
-/* ADD PICTURES TO THE TEXT   -------- tool-item Style ----------------------------- */
-/* --------------------------------------------------------------------------------- */
-.tool-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.tool-item-content {
-    flex: 1;
-}
-
-.tool-item-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tool-item-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* Responsive adjustments ------- */
+/* Mobile devices */
 @media (max-width: 768px) {
-    .tool-item {
-        flex-direction: column;
+    /* Header */
+    header {
+        padding: 10px 20px;
+        justify-content: space-between;
     }
 
-    .tool-item-image {
+    .logo-container {
+        position: relative;
         width: 100%;
-        height: 200px;
-        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
     }
 
-    .tool-item-buttons {
-        flex-wrap: wrap;
+    /* Content sections */
+    .transparent-section {
+        padding: 20px;
+    }
+
+    .fancy-frame {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    /* Footer */
+    .page-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+
+    header nav ul.show {
+        transform: scaleY(1);
+    }
+}
+
+/* Landscape mode */
+@media (max-width: 900px) and (max-height: 500px) {
+    .transparent-section,
+    .fancy-frame,
+    .container,
+    .resource-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 0 auto;
     }
 }

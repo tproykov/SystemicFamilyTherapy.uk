@@ -1,3 +1,4 @@
+/* Define the FONT ------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 body, ul {
@@ -10,41 +11,125 @@ body * {
     font-family: 'Lato', sans-serif;
 }
 
+/* Header layout ----------------------------------------------------------------- */
 header {
-    box-shadow: 0 3px 8px -4px #ccc;
     position: relative;
-    padding: 20px 40px;
     display: flex;
+    justify-content: flex-end; /* Push nav items to the right */
     align-items: center;
-    justify-content: flex-end;
+    padding: 20px 40px;
     z-index: 1;
 }
 
 .page-header {
-    box-shadow: 0 3px 8px -4px #ccc;
+    box-shadow: 0 3px 8px -4px #ccc
+}
+
+/* Logo Container Styles ---------------------------------------------------------- */
+.logo-container {
+    position: absolute; /* so that it can overlap with other elements */
+    top: 0; /* Align to the top */
+    left: 0; /* Match header padding */
+    z-index: 1000; /* Higher than the nav items to make sure it stays on top */
+    pointer-events: auto; /* Ensures logo remains clickable */
+    /* margin-right: auto; /* Pushes nav items to the right */
+}
+
+.logo-container img {
+    display: block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+/* Navigation menu positioning ---------------------------------------------------- */
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns menu items to the right */
+    z-index: 100; /* Lower than logo but higher than other content */
 }
 
 header nav ul {
     display: flex;
     list-style: none;
     align-items: center;
+    margin-left: auto; /* Pushes items to the right */
+    padding-left: 0;
 }
 
-/* Logo Container Styles -------------------------------- */
-.logo-container {
+/* Navigation items */
+.nav-item {
+    margin: 0 10px;
     position: relative;
-    z-index: 3; /* Higher than the nav items */
+    z-index: 100; /* Ensure nav items don't overlap logo */
 }
 
-.logo-container img {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0; /* Align to right */
-    vertical-align: middle;
-    margin: 0 7px;
+/* Main content adjustment for logo overlap -------------- */
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px; /* Adjust based on your needs */
 }
 
+/* Media query for mobile view ------------------------- */
+@media (max-width: 900px) {
+    header {
+        justify-content: flex-end;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 0;
+        left: 20px; /* Match mobile padding */
+        z-index: 1000; /* Keep highest z-index in mobile view */
+    }
+
+    .logo-container img {
+        display: block;
+        margin: 0;
+    }
+
+    /* Adjust hamburger position and z-index */
+    .hamburger {
+        margin-left: auto;
+        position: relative;
+        z-index: 900; /* Below logo but above menu items */
+    }
+
+    header nav ul {
+        display: none; /* Hidden by default, shown when hamburger is clicked */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        flex-direction: column;
+        padding: 20px 0;
+        margin: 0;
+        z-index: 800; /* Below logo and hamburger */
+    }
+
+    header nav ul.show {
+        display: flex;
+    }
+
+    /* Adjust hamburger position */
+    .hamburger {
+        margin-left: auto; /* Push hamburger to the right */
+    }
+}
+
+/* Ensure proper stacking context */
+.page-header {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 3px 8px -4px #ccc;
+}
+
+/* Navigation menu items ---- look at these closer! ----------------------------------------------- */
 .login-nav-item * {
     display: inline-block;
     vertical-align: middle;
