@@ -2,8 +2,8 @@
 
 /* ==========================================================================
    TABLE OF CONTENTS
-   1. CSS Reset & Base Styles
-   2. Typography
+   1. Table of contents
+   2. Typography and global styles
    3. Layout & Grid
    4. Header & Navigation
    5. Main Content Sections
@@ -14,23 +14,21 @@
    ========================================================================== */
 
 /* ==========================================================================
-   1. CSS Reset & Base Styles
+   2. Typography and global styles
    ========================================================================== */
-body, ul {
+
+/* Apply Lato font globally */
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #565656;
     margin: 0;
     padding: 0;
 }
 
-/* ==========================================================================
-   2. Typography
-   ========================================================================== */
-
-/* Apply Lato font globally */
-body,
+/* Apply only font to all elements, not color */
 body * {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #565656;
 }
 
 /* ==========================================================================
@@ -183,7 +181,7 @@ main {
 /* ==========================================================================
    6. Components
    ========================================================================== */
-/* Buttons */
+/* Base Button style */
 .btn {
     background: #8ec545;
     color: #fff;
@@ -192,6 +190,13 @@ main {
     border: none;
     text-transform: uppercase;
     box-shadow: 0 3px 8px -4px #ccc;
+}
+
+/* Tool item buttons container */
+.tool-item-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 /* Fancy Frame */
@@ -216,18 +221,29 @@ main {
     margin: 8px 0;
 }
 
-/* Tool Item */
+/* Container for tool items */
+.tool-items-container {
+    display: grid;
+    /* auto-fit will create as many columns as can fit, with minimum width of 500px */
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tool Item styles*/
 .tool-item {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    margin: 30px 110px 30px 50px;
     padding: 20px;
     border-radius: 10px;
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 160px);
+    margin: 0;
+    width: auto;
 }
 
 .tool-item-content {
@@ -334,6 +350,17 @@ footer nav ul {
     white-space: nowrap;
 }
 
+/* Footer links and menu items */
+.footer-menu li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-menu li a:hover {
+    opacity: 0.8;
+}
+
 /* Social media styles - positioned to top right */
 .social-media {
     position: absolute;
@@ -385,6 +412,13 @@ footer nav ul {
 /* ==========================================================================
    9. Media Queries
    ========================================================================== */
+/* Wider screens */
+@media (max-width: 1200px) {
+    .tool-items-container {
+        padding: 20px;  /* Slightly less padding on smaller screens */
+        gap: 20px;     /* Reduce gap between items */
+    }
+}
 /* Tablet and smaller desktops */
 @media (max-width: 900px) {
     /* Header adjustments */
@@ -412,6 +446,11 @@ footer nav ul {
 
     header nav ul.show {
         display: flex;
+    }
+
+    .tool-items-container {
+        grid-template-columns: 1fr;  /* Switch to single column */
+        max-width: 600px;  /* Limit width for better readability */
     }
 }
 
@@ -441,14 +480,41 @@ footer nav ul {
         padding: 20px;
     }
 
+    .tool-items-container {
+        grid-template-columns: 1fr; /* Force single column on mobile */
+        padding: 15px;
+        gap: 15px;
+    }
+
     .tool-item {
         flex-direction: column;
+        padding: 15px;
+    }
+
+    .tool-item-content {
+        width: 100%;
+        padding: 0;
     }
 
     .tool-item-image {
-        width: 200px;      /* Maintain fixed width on mobile */
-        height: 200px;     /* Maintain fixed height on mobile */
-        margin: 0 auto 15px; /* Center the image and add bottom margin */
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 15px;
+    }
+
+    .tool-item-buttons {
+        gap: 8px; /* Reduce gap between buttons */
+        justify-content: center;
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    /* Adjust buttons within tool items for mobile */
+    .tool-item .btn {
+        padding: 8px 12px; /* Smaller padding */
+        font-size: 14px; /* Slightly smaller font */
+        white-space: nowrap; /* Prevent text wrapping */
+        min-width: 0; /* Allow buttons to be narrower */
+        flex: 1; /* Allow buttons to share space equally */
     }
 
     /* Footer */
@@ -501,6 +567,23 @@ footer nav ul {
 
     header nav ul.show {
         transform: scaleY(1);
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .tool-items-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .tool-item {
+        margin: 15px 10px; /* Even smaller margins for very small screens */
+    }
+
+    .tool-item .btn {
+        padding: 6px 10px; /* Even smaller padding if needed */
+        font-size: 12px; /* Even smaller font if needed */
     }
 }
 
