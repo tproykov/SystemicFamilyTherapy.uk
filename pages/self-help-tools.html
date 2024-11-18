@@ -1,8 +1,36 @@
-<!-- pages/services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Free self-help resources and tools for families, including guides for separated parents, communication tools, emotional regulation techniques, and parenting skills. Available in both text and audio formats.">
+    <meta name="keywords"
+          content="self-help tools, family therapy, parenting resources, communication tools, emotional regulation, separated parents">
+    <meta name="author" content="Dr Todor Proykov">
+
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <title>Self-help Tools - Systemic Family Therapy</title>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    <link rel="preload" href="../images/logo-extended.jpg" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Google Analytics - Load asynchronously -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,83 +40,87 @@
         }
 
         gtag('js', new Date());
-
-        gtag('config', 'G-DZJSGW8GN8');
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
+        gtag('config', 'G-DZJSGW8GN8', {
+            'content_group': 'Self-help Resources'
         });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MHLWL5NJ');</script>
-    <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self-help Tools - Systemic Family Therapy</title>
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico"/>
-    <link rel="stylesheet" href="../styles.css">
+    </script>
+
+    <!-- Google Tag Manager - Load asynchronously -->
+    <script async>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MHLWL5NJ');
+    </script>
 </head>
 
 <body>
-
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<header>
-    <nav>
-        <!-- Hamburger icon button for mobile -->
-        <button class="hamburger" aria-label="Toggle navigation">
-            <!-- Three lines to represent the hamburger icon -->
+<header role="banner">
+    <div class="logo-container">
+        <a class="nav-link" href="../index.html" aria-label="Home">
+            <img class="logo"
+                 src="../images/logo-extended.jpg"
+                 alt="Systemic Family Therapy logo"
+                 width="200"
+                 height="80"
+                 loading="eager">
+        </a>
+    </div>
+    <nav role="navigation" aria-label="Main navigation">
+        <button class="hamburger"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-        <ul>
+        <ul id="main-nav">
             <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="self-help-tools.html" aria-current="page">Self-help tools</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
             <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
-            <!-- The search and login buttons will be implemented at a later stage ------------------ -->
-            <!-- <li class="nav-item search-nav-item"><img src="images/search.png" alt="Search Icon"></li> -->
-            <!-- <li class="nav-item login-nav-item"><button class="btn login-btn">Login</button></li> -->
         </ul>
     </nav>
 </header>
 
-<div class="logo-container">
-    <a class="nav-link" href="../index.html"><img class="logo" src="../images/logo-extended.jpg"
-                                                  alt="Systemic Family Therapy logo"></a>
-</div>
-
-<main>
-    <section class="transparent-section">
-        <h1>Self-Help Tools - Systemic Family Therapy with Dr Todor Proykov</h1>
+<main id="main-content" role="main">
+    <section class="transparent-section" aria-labelledby="page-title">
+        <h1 id="page-title">Self-Help Tools - Systemic Family Therapy with Dr Todor Proykov</h1>
         <p>Here are tools and strategies to work on relationships issues and to improve emotional well-being.</p>
     </section>
 
-    <section class="fancy-frame">
-
-        <div><h2>Resources for separated parents in high conflict</h2></div>
+    <!-- Resources for Separated Parents -->
+    <section class="fancy-frame" aria-labelledby="separated-parents-title">
+        <h2 id="separated-parents-title">Resources for separated parents in high conflict</h2>
 
         <div class="tool-items-container">
-            <div class="tool-item">
-                <img src="../images/boy_with_teddy.jpg" alt="A boy with a Teddy" class="tool-item-image">
+            <!-- Survival Guide -->
+            <article class="tool-item" aria-labelledby="survival-guide-title">
+                <img src="../images/boy_with_teddy.jpg"
+                     alt="A young boy hugging a teddy bear, representing emotional comfort during family separation"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>High Conflict Separated Parents: Survival’s Guide</h3>
+                    <h3 id="survival-guide-title">High Conflict Separated Parents: Survival's Guide</h3>
                     <ul>
                         <li>Positive communication techniques</li>
                         <li>De-escalation techniques</li>
@@ -96,210 +128,285 @@
                         <li>Identifying, avoiding and managing triggers</li>
                         <li>Building emotional resilience and healthy boundaries</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-survival-guide-btn">Download Text</button>
-                    <button class="btn sh-survival-guide-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="survival-guide-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-survival-guide-btn"
+                                aria-label="Download Survival Guide Text Version">
+                            Download Text
+                        </button>
+                        <button class="btn sh-survival-guide-audio-btn"
+                                aria-label="Play Survival Guide Audio Version"
+                                aria-controls="survival-guide-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="survival-guide-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_survival_guide_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="tool-item">
-                <img src="../images/girl_with_dad.jpg" alt="Girl with Dad" class="tool-item-image">
+            <!-- Child Communication Guide -->
+            <article class="tool-item" aria-labelledby="child-comm-title">
+                <img src="../images/girl_with_dad.jpg"
+                     alt="A father and daughter having a meaningful conversation"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>How to Communicate with Your Child as a Separated Parent</h3>
+                    <h3 id="child-comm-title">How to Communicate with Your Child as a Separated Parent</h3>
                     <ul>
                         <li>Communicating about the separation</li>
                         <li>Talking about contact arrangements</li>
-                        <li> Managing your feelings about the other parent</li>
+                        <li>Managing your feelings about the other parent</li>
                         <li>Understanding children's feelings and needs</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-comm-children-guide-btn">Download Text</button>
-                    <button class="btn sh-comm-children-guide-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="comm-children-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-comm-children-guide-btn"
+                                aria-label="Download Child Communication Guide Text Version">
+                            Download Text
+                        </button>
+                        <button class="btn sh-comm-children-guide-audio-btn"
+                                aria-label="Play Child Communication Guide Audio Version"
+                                aria-controls="comm-children-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="comm-children-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_comm_children_guide_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/girl_with_mum.jpg" alt="Girl with Mum" class="tool-item-image">
+            <!-- Child Not Wanting to See Ex -->
+            <article class="tool-item" aria-labelledby="child-resistance-title">
+                <img src="../images/girl_with_mum.jpg"
+                     alt="A mother and daughter sharing a supportive moment"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>What if Your Child Does not Want to See Your Ex</h3>
+                    <h3 id="child-resistance-title">What if Your Child Does not Want to See Your Ex</h3>
                     <ul>
-                        <li>Understanding children’s concerns</li>
+                        <li>Understanding children's concerns</li>
                         <li>Emphasising the importance of the Contact parent relationship</li>
-                        <li> Making arrangements for comfortable contact</li>
+                        <li>Making arrangements for comfortable contact</li>
                         <li>Building positive perceptions around contact</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-supporting-children-have-contact-btn">Download Text</button>
-                    <button class="btn sh-supporting-children-have-contact-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="supporting-contact-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-supporting-children-have-contact-btn"
+                                aria-label="Download guide about supporting children's contact">
+                            Download Text
+                        </button>
+                        <button class="btn sh-supporting-children-have-contact-audio-btn"
+                                aria-label="Play audio guide about supporting children's contact"
+                                aria-controls="supporting-contact-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="supporting-contact-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_supporting_contact_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/boy_looking_sad.jpg" alt="Boy looking sad" class="tool-item-image">
+            <!-- Child Not Wanting to See You -->
+            <article class="tool-item" aria-labelledby="child-refusal-title">
+                <img src="../images/boy_looking_sad.jpg"
+                     alt="A pensive boy looking out of frame, representing emotional challenges"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>How to Respond if Your Child Does Not Want to See You</h3>
+                    <h3 id="child-refusal-title">How to Respond if Your Child Does Not Want to See You</h3>
                     <ul>
-                        <li>Responding to the child/ children</li>
+                        <li>Responding to the child/children</li>
                         <li>Working on the bond with your child</li>
-                        <li> Making arrangements for comfortable contact</li>
+                        <li>Making arrangements for comfortable contact</li>
                         <li>Maximising the chances of reconnection</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-supporting-children-see-you-btn">Download Text</button>
-                    <button class="btn sh-supporting-children-see-you-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="supporting-see-you-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-supporting-children-see-you-btn"
+                                aria-label="Download guide about reconnecting with your child">
+                            Download Text
+                        </button>
+                        <button class="btn sh-supporting-children-see-you-audio-btn"
+                                aria-label="Play audio guide about reconnecting with your child"
+                                aria-controls="supporting-see-you-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="supporting-see-you-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_supporting_children_see_you_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/boy_at_window.jpg" alt="Boy at window" class="tool-item-image">
+            <!-- Meeting with Ex -->
+            <article class="tool-item" aria-labelledby="ex-meeting-title">
+                <img src="../images/boy_at_window.jpg"
+                     alt="A contemplative boy looking through a window, symbolizing reflection and hope"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>How to Hold a Constructive Meeting with Your Ex</h3>
+                    <h3 id="ex-meeting-title">How to Hold a Constructive Meeting with Your Ex</h3>
                     <ul>
                         <li>Keep the focus on the children</li>
                         <li>Set clear goals and adopt a business-like approach</li>
                         <li>Time-limit the meeting and prepare in advance</li>
                         <li>Address conflicts productively</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-meeting-with-your-ex-btn">Download Text</button>
-                    <button class="btn sh-meeting-with-your-ex-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="meeting-your-ex-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-meeting-with-your-ex-btn"
+                                aria-label="Download guide about meeting with your ex">
+                            Download Text
+                        </button>
+                        <button class="btn sh-meeting-with-your-ex-audio-btn"
+                                aria-label="Play audio guide about meeting with your ex"
+                                aria-controls="meeting-your-ex-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="meeting-your-ex-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_meeting_with_your_ex_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/girl_with_backpack.jpg" alt="Girl with a backpack" class="tool-item-image">
+            <!-- Communication Book -->
+            <article class="tool-item" aria-labelledby="comm-book-title">
+                <img src="../images/girl_with_backpack.jpg"
+                     alt="A girl with a backpack, representing the transition between homes"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>How to Use a Communication Book in Co-Parenting</h3>
+                    <h3 id="comm-book-title">How to Use a Communication Book in Co-Parenting</h3>
                     <ul>
                         <li>Use clear, neutral, and respectful language</li>
                         <li>Share relevant, specific information</li>
                         <li>Maintain consistency and accountability</li>
                         <li>Logistical considerations</li>
                     </ul>
-                    <p></p>
-                    <button class="btn sh-communication-book-btn">Download Text</button>
-                    <button class="btn sh-communication-book-audio-btn">Play Audio</button>
-                    <div class="audio-player" id="communication-book-player" style="display: none;">
+                    <div class="tool-item-buttons">
+                        <button class="btn sh-communication-book-btn"
+                                aria-label="Download guide about using a communication book">
+                            Download Text
+                        </button>
+                        <button class="btn sh-communication-book-audio-btn"
+                                aria-label="Play audio guide about using a communication book"
+                                aria-controls="communication-book-player"
+                                aria-expanded="false">
+                            Play Audio
+                        </button>
+                    </div>
+                    <div class="audio-player"
+                         id="communication-book-player"
+                         style="display: none;"
+                         aria-live="polite">
                         <audio controls>
                             <source src="../files/sphc_communication_book_audio.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/mother_and_daughter.jpg" alt="Mother and daughter" class="tool-item-image">
+            <!-- Best Practices in Contact -->
+            <article class="tool-item" aria-labelledby="contact-practices-title">
+                <img src="../images/mother_and_daughter.jpg"
+                     alt="Mother and daughter sharing a warm moment"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>Best Practices in Contact Arrangements</h3>
+                    <h3 id="contact-practices-title">Best Practices in Contact Arrangements</h3>
                     <ul>
-                        <li>Responding to the child/ children</li>
+                        <li>Responding to the child/children</li>
                         <li>Working on the bond with your child</li>
-                        <li> Making arrangements for comfortable contact</li>
+                        <li>Making arrangements for comfortable contact</li>
                         <li>Maximising the chances of reconnection</li>
                     </ul>
-                    <p></p>
-                    <!-- <button class="btn sh-supporting-children-see-you-btn">Download Text</button> -->
-
+                    <!-- Note: No buttons currently implemented -->
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="resource-section"> -->
-            <div class="tool-item">
-                <img src="../images/dad_and_daughter.jpg" alt="Dad and daughter" class="tool-item-image">
+            <!-- During Contact -->
+            <article class="tool-item" aria-labelledby="during-contact-title">
+                <img src="../images/dad_and_daughter.jpg"
+                     alt="Father and daughter enjoying quality time together"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>What to Do During Contact</h3>
+                    <h3 id="during-contact-title">What to Do During Contact</h3>
                     <ul>
-                        <li>Responding to the child/ children</li>
+                        <li>Responding to the child/children</li>
                         <li>Working on the bond with your child</li>
-                        <li> Making arrangements for comfortable contact</li>
+                        <li>Making arrangements for comfortable contact</li>
                         <li>Maximising the chances of reconnection</li>
                     </ul>
-                    <p></p>
-                    <!-- <button class="btn sh-supporting-children-see-you-btn">Download Text</button> -->
-
+                    <!-- Note: No buttons currently implemented -->
                 </div>
-            </div>
-
-            <!--            &lt;!&ndash; <div class="resource-section">-->
-            <!--                <div class="tool-item">-->
-            <!--                    <h3>Tips for Indirect Contact</h3>-->
-            <!--                    <ul>-->
-            <!--                        <li>Responding to the child/ children</li>-->
-            <!--                        <li>Working on the bond with your child</li>-->
-            <!--                        <li> Making arrangements for comfortable contact</li>-->
-            <!--                        <li>Maximising the chances of reconnection</li>-->
-            <!--                    </ul>-->
-            <!--                    <p></p>-->
-            <!--                    <button class="btn sh-supporting-children-see-you-btn">Download Text</button>-->
-
-            <!--                </div>-->
-            <!--            </div> &ndash;&gt;-->
-
-
+            </article>
         </div>
-
     </section>
 
-    <section class="fancy-frame">
-
-        <p>The sections below are under development and they are just examples of how they might look like.
-            Please visit later to check on new resources that will be uploaded.</p>
-
+    <!-- Development Notice -->
+    <section class="fancy-frame" aria-label="Development notice">
+        <p>The sections below are under development and they are just examples of how they might look like. Please visit
+            later to check on new resources that will be uploaded.</p>
     </section>
 
-    <section class="fancy-frame">
-
-        <div><h2>Communication Tools</h2></div>
-
+    <!-- Communication Tools -->
+    <section class="fancy-frame" aria-labelledby="communication-tools-title">
+        <h2 id="communication-tools-title">Communication Tools</h2>
         <div class="resource-container">
             <div class="resource-section">
-                <div class="service-item">
-                    <h3>Active Listening Exercise</h3>
+                <article class="service-item" aria-labelledby="listening-exercise-title">
+                    <h3 id="listening-exercise-title">Active Listening Exercise</h3>
                     <p>Practice these steps to improve your listening skills:</p>
                     <ol>
                         <li>Give full attention to the speaker</li>
@@ -308,11 +415,10 @@
                         <li>Reflect back what you've heard</li>
                         <li>Ask clarifying questions</li>
                     </ol>
-                    <!-- <button class="btn sh-worksheet-btn">Download text</button> -->
-                </div>
+                </article>
 
-                <div class="service-item">
-                    <h3>Conflict Resolution Template</h3>
+                <article class="service-item" aria-labelledby="conflict-resolution-title">
+                    <h3 id="conflict-resolution-title">Conflict Resolution Template</h3>
                     <p>A structured approach to addressing conflicts:</p>
                     <ul>
                         <li>State the issue clearly</li>
@@ -321,20 +427,17 @@
                         <li>Brainstorm solutions together</li>
                         <li>Agree on action steps</li>
                     </ul>
-                    <p></p>
-<!--                    <button class="btn sh-template-btn">Download text</button>-->
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="fancy-frame">
-
-        <div><h2>Emotional Regulation, Anxiety and Low Mood</h2></div>
-
+    <!-- Emotional Regulation Section -->
+    <section class="fancy-frame" aria-labelledby="emotional-regulation-title">
+        <h2 id="emotional-regulation-title">Emotional Regulation, Anxiety and Low Mood</h2>
         <div class="resource-section">
-            <div class="service-item">
-                <h3>Stress Management Techniques</h3>
+            <article class="service-item" aria-labelledby="stress-management-title">
+                <h3 id="stress-management-title">Stress Management Techniques</h3>
                 <p>Quick exercises for managing stress:</p>
                 <ul>
                     <li>Deep breathing exercises</li>
@@ -342,19 +445,16 @@
                     <li>Grounding techniques</li>
                     <li>Mindfulness practices</li>
                 </ul>
-                <p></p>
-<!--                <button class="btn sh-guide1-btn">Download text</button>-->
-            </div>
+            </article>
         </div>
     </section>
 
-    <section class="fancy-frame">
-
-        <div><h2>Parenting skills and parenting approaches</h2></div>
-
+    <!-- Parenting Skills Section -->
+    <section class="fancy-frame" aria-labelledby="parenting-skills-title">
+        <h2 id="parenting-skills-title">Parenting skills and parenting approaches</h2>
         <div class="resource-section">
-            <div class="service-item">
-                <h3>Parenting Techniques</h3>
+            <article class="service-item" aria-labelledby="parenting-techniques-title">
+                <h3 id="parenting-techniques-title">Parenting Techniques</h3>
                 <p>Quick exercises for managing stress:</p>
                 <ul>
                     <li>Deep breathing exercises</li>
@@ -362,19 +462,16 @@
                     <li>Grounding techniques</li>
                     <li>Mindfulness practices</li>
                 </ul>
-                <p></p>
-<!--                <button class="btn sh-guide1-btn">Download text</button>-->
-            </div>
+            </article>
         </div>
     </section>
 
-    <section class="fancy-frame">
-
-        <div><h2>Improving Significant Relationships</h2></div>
-
+    <!-- Relationships Section -->
+    <section class="fancy-frame" aria-labelledby="relationships-title">
+        <h2 id="relationships-title">Improving Significant Relationships</h2>
         <div class="resource-section">
-            <div class="service-item">
-                <h3>Weekly Check-in Guide</h3>
+            <article class="service-item" aria-labelledby="weekly-checkin-title">
+                <h3 id="weekly-checkin-title">Weekly Check-in Guide</h3>
                 <p>Structure for meaningful conversations with family members:</p>
                 <ul>
                     <li>Appreciation sharing</li>
@@ -382,62 +479,223 @@
                     <li>Goal setting</li>
                     <li>Quality time planning</li>
                 </ul>
-                <p></p>
-<!--                <button class="btn sh-guide2-btn">Download guide</button>-->
-            </div>
+            </article>
         </div>
     </section>
 </main>
 
-<footer class="page-footer">
-    <article class="footer-logo-container">
-        <a class="nav-link" href="../index.html"><img src="../images/logo-bw.jpg" alt=""></a>
-    </article>
-    <article class="footer-menu">
-        <nav class="footer-nav">
-            <ul class="footer-links">
-                <li><a class="nav-link" href="../index.html">Home</a></li>
-                <li><a class="nav-link" href="services.html">Services</a></li>
-                <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
-                <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
-                <li><a class="nav-link" href="contacts.html">Contacts</a></li>
-            </ul>
-        </nav>
-    </article>
+<footer class="page-footer" role="contentinfo">
+    <div class="footer-logo-container">
+        <a class="nav-link" href="../index.html" aria-label="Home">
+            <img src="../images/logo-bw.jpg"
+                 alt="Systemic Family Therapy logo"
+                 width="80"
+                 height="80"
+                 loading="lazy">
+        </a>
+    </div>
 
-    <article class="footer-social">
-        <nav class="social-media">
+    <nav class="footer-menu" aria-label="Footer navigation">
+        <ul class="footer-links">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="services.html">Services</a></li>
+            <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
+            <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
+            <li><a class="nav-link" href="contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <div class="footer-social">
+        <nav class="social-media" aria-label="Social media links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/todorproykov/" title="Find me on LinkedIn" target="_blank"><img
-                        src="../images/linkedin.jpg" alt="Find me on LinkedIn"></a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/todorproykov/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Find me on LinkedIn (opens in new tab)">
+                        <img src="../images/linkedin.jpg"
+                             alt="LinkedIn logo"
+                             width="30"
+                             height="30"
+                             loading="lazy">
+                    </a>
+                </li>
             </ul>
         </nav>
-    </article>
+    </div>
 
-    <!-- Centered copyright container -->
     <div class="footer-copyright">
         <p>&copy; 2024 - Dr Todor Proykov. All Rights Reserved.</p>
         <p>The code of this website, the majority of the images and audio, and some of the materials here have been
-            prepared with
-            the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
-        <p>All logos and organisation names used here are property of their respective owners.</p></div>
+            prepared with the help of AI. The materials have been carefully edited on the basis of my professional
+            experience.</p>
+        <p>All logos and organisation names used here are property of their respective owners.</p>
+    </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<!-- Schema.org markup for better SEO -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Self-help Tools - Systemic Family Therapy",
+        "description": "Free self-help resources and tools for families, including guides for separated parents, communication tools, and emotional regulation techniques.",
+        "provider": {
+            "@type": "Person",
+            "name": "Dr Todor Proykov",
+            "jobTitle": "Systemic Family Psychotherapist"
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "http://schema.org/InStock",
+            "price": "0",
+            "priceCurrency": "GBP"
+        },
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Families and individuals seeking therapeutic support"
+        },
+        "educationalLevel": "Beginner",
+        "learningResourceType": "Self-help guide",
+        "isAccessibleForFree": true,
+        "hasPart": [
+            {
+                "@type": "CreativeWork",
+                "name": "High Conflict Separated Parents: Survival's Guide",
+                "contentUrl": "../files/sphc_survival_guide.pdf",
+                "encodingFormat": "application/pdf"
+            },
+            {
+                "@type": "AudioObject",
+                "name": "High Conflict Separated Parents: Survival's Guide Audio",
+                "contentUrl": "../files/sphc_survival_guide_audio.mp3",
+                "encodingFormat": "audio/mpeg"
+            }
+        ]
+    }
+</script>
 
-<!-- JAVASCRIPT TO TOGGLE THE HAMBURGER MENU ON MOBILE DEVICES ------------------------ -->
+<!-- Initialize audio players and event handlers -->
 <script>
-    // JavaScript to toggle the menu
-    document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector("header nav ul");
+    // Audio player configuration
+    const audioConfigs = [
+        {
+            buttonId: 'sh-survival-guide-audio-btn',
+            playerId: 'survival-guide-player',
+            audioPath: '../files/sphc_survival_guide_audio.mp3'
+        },
+        {
+            buttonId: 'sh-comm-children-guide-audio-btn',
+            playerId: 'comm-children-player',
+            audioPath: '../files/sphc_comm_children_guide_audio.mp3'
+        },
+        {
+            buttonId: 'sh-supporting-children-have-contact-audio-btn',
+            playerId: 'supporting-contact-player',
+            audioPath: '../files/sphc_supporting_contact_audio.mp3'
+        },
+        {
+            buttonId: 'sh-supporting-children-see-you-audio-btn',
+            playerId: 'supporting-see-you-player',
+            audioPath: '../files/sphc_supporting_children_see_you_audio.mp3'
+        },
+        {
+            buttonId: 'sh-meeting-with-your-ex-audio-btn',
+            playerId: 'meeting-your-ex-player',
+            audioPath: '../files/sphc_meeting_with_your_ex_audio.mp3'
+        },
+        {
+            buttonId: 'sh-communication-book-audio-btn',
+            playerId: 'communication-book-player',
+            audioPath: '../files/sphc_communication_book_audio.mp3'
+        }
+    ];
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize audio players
+        audioConfigs.forEach(config => {
+            const button = document.querySelector(`.${config.buttonId}`);
+            const player = document.getElementById(config.playerId);
+
+            if (button && player) {
+                button.addEventListener('click', () => {
+                    const isVisible = player.style.display !== 'none';
+                    const audio = player.querySelector('audio');
+
+                    // Hide all other players first
+                    document.querySelectorAll('.audio-player').forEach(p => {
+                        if (p !== player) {
+                            p.style.display = 'none';
+                            const a = p.querySelector('audio');
+                            if (a) a.pause();
+                            const b = p.previousElementSibling.querySelector(`button[aria-controls="${p.id}"]`);
+                            if (b) {
+                                b.setAttribute('aria-expanded', 'false');
+                                b.textContent = 'Play Audio';
+                            }
+                        }
+                    });
+
+                    // Toggle current player
+                    player.style.display = isVisible ? 'none' : 'block';
+                    button.setAttribute('aria-expanded', !isVisible);
+                    button.textContent = isVisible ? 'Play Audio' : 'Pause Audio';
+
+                    if (audio) {
+                        isVisible ? audio.pause() : audio.play();
+                    }
+                });
+            }
+        });
+
+        // Initialize hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('#main-nav');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('show');
+            });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (navMenu?.classList.contains('show') &&
+                !event.target.closest('.hamburger') &&
+                !event.target.closest('#main-nav')) {
+                navMenu.classList.remove('show');
+                hamburger?.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navMenu?.classList.contains('show')) {
+                navMenu.classList.remove('show');
+                hamburger?.setAttribute('aria-expanded', 'false');
+                hamburger?.focus();
+            }
+        });
+    });
+
+    // Track resource downloads
+    document.querySelectorAll('[class*="-btn"]').forEach(button => {
+        button.addEventListener('click', () => {
+            const resourceName = button.className.match(/sh-([a-zA-Z-]+)-btn/)?.[1];
+            if (resourceName) {
+                gtag('event', 'resource_access', {
+                    'event_category': 'Self Help',
+                    'event_label': resourceName,
+                    'value': 1
+                });
+            }
         });
     });
 </script>
 
-
+<!-- Defer main JavaScript -->
+<script src="../js/main.js" defer></script>
 </body>
 </html>

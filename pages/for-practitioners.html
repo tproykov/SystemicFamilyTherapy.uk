@@ -1,113 +1,138 @@
-<!-- pages/services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional resources for systemic family therapists, including clinical tools, assessment templates, and supervision opportunities with Dr Todor Proykov.">
+  <meta name="keywords" content="systemic family therapy resources, clinical supervision, therapy training, professional development, assessment tools">
+  <meta name="author" content="Dr Todor Proykov">
+
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+  <title>For Practitioners - Systemic Family Therapy</title>
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="../styles.css" as="style">
+  <link rel="preload" href="../js/main.js" as="script">
+  <link rel="preload" href="../images/logo-extended.jpg" as="image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Google Analytics - Load asynchronously -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-DZJSGW8GN8');
+    gtag('config', 'G-DZJSGW8GN8', {
+      'content_group': 'Professional Resources'
+    });
   </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MHLWL5NJ');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For practitioners - Systemic Family Therapy</title>
-  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Google Tag Manager - Load asynchronously -->
+  <script async>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHLWL5NJ');
+  </script>
 </head>
 
 <body>
-
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
-<header>
-  <nav>
-    <!-- Hamburger icon button for mobile -->
-    <button class="hamburger" aria-label="Toggle navigation">
-      <!-- Three lines to represent the hamburger icon -->
+<header role="banner">
+  <div class="logo-container">
+    <a class="nav-link" href="../index.html" aria-label="Home">
+      <img class="logo"
+           src="../images/logo-extended.jpg"
+           alt="Systemic Family Therapy logo"
+           width="200"
+           height="80"
+           loading="eager">
+    </a>
+  </div>
+  <nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="main-nav">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul>
+    <ul id="main-nav">
       <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
       <li class="nav-item"><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
-      <li class="nav-item"><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
+      <li class="nav-item"><a class="nav-link" href="for-practitioners.html" aria-current="page">For practitioners</a></li>
       <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
-      <!-- The search and login buttons will be implemented at a later stage ------------------ -->
-      <!-- <li class="nav-item search-nav-item"><img src="images/search.png" alt="Search Icon"></li> -->
-      <!-- <li class="nav-item login-nav-item"><button class="btn login-btn">Login</button></li> -->
     </ul>
   </nav>
 </header>
 
-<div class="logo-container">
-  <a class="nav-link" href="../index.html"><img class="logo" src="../images/logo-extended.jpg" alt="Systemic Family Therapy logo"></a>
-</div>
-
-<main>
-  <section class="transparent-section">
-    <h1>Professional Resources - Systemic Family Therapy with Dr Todor Proykov</h1>
+<main id="main-content" role="main">
+  <section class="transparent-section" aria-labelledby="page-title">
+    <h1 id="page-title">Professional Resources - Systemic Family Therapy with Dr Todor Proykov</h1>
     <p>Supporting the development of systemic family therapy practice through shared knowledge and resources.</p>
   </section>
 
-  <section class="fancy-frame">
-
-    <h1>This section is currently under development.</h1>
-
+  <section class="fancy-frame" aria-labelledby="development-notice">
+    <h2 id="development-notice">Development Notice</h2>
+    <p>This section is currently under development.</p>
     <p>This is just an example of what this section may look like.</p>
 
-    <div class="professional-resources">
-      <h2>Clinical resources</h2>
+    <div class="professional-resources" aria-labelledby="clinical-resources">
+      <h2 id="clinical-resources">Clinical Resources</h2>
 
-      <div class="resource-item">
-        <h3>Assessment tools</h3>
+      <article class="resource-item" aria-labelledby="assessment-tools">
+        <h3 id="assessment-tools">Assessment Tools</h3>
         <ul>
           <li>Family systems assessment template</li>
           <li>Genogram creation guide</li>
           <li>Circular questioning examples</li>
           <li>Therapeutic alliance scales</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="resource-item">
-        <h3>Intervention techniques</h3>
+      <article class="resource-item" aria-labelledby="intervention-techniques">
+        <h3 id="intervention-techniques">Intervention Techniques</h3>
         <ul>
           <li>Narrative therapy exercises</li>
           <li>Solution-focused questions guide</li>
           <li>Strategic interventions handbook</li>
           <li>Structural family therapy techniques</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="resource-item">
-        <h3>Professional development</h3>
+      <article class="resource-item" aria-labelledby="professional-development">
+        <h3 id="professional-development">Professional Development</h3>
         <ul>
           <li>Supervision guidelines</li>
           <li>Ethical decision-making framework</li>
           <li>Research updates and summaries</li>
           <li>Case conceptualisation templates</li>
         </ul>
-      </div>
+      </article>
     </div>
-    </section>
-  <section class="fancy-frame">
+  </section>
 
+  <section class="fancy-frame" aria-labelledby="training-opportunities">
     <div class="training-opportunities">
-      <h2>Training and supervision</h2>
+      <h2 id="training-opportunities">Training and Supervision</h2>
       <p>I offer regular professional development opportunities including:</p>
       <ul>
         <li>Individual supervision sessions</li>
@@ -119,55 +144,126 @@
   </section>
 </main>
 
-<footer class="page-footer">
-  <article class="footer-logo-container">
-    <a class="nav-link" href="../index.html"><img src="../images/logo-bw.jpg" alt=""></a>
-  </article>
-  <article class="footer-menu">
-    <nav class="footer-nav">
-      <ul class="footer-links">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
-        <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
-        <li><a class="nav-link" href="contacts.html">Contacts</a></li>
-      </ul>
-    </nav>
-  </article>
+<footer class="page-footer" role="contentinfo">
+  <div class="footer-logo-container">
+    <a class="nav-link" href="../index.html" aria-label="Home">
+      <img src="../images/logo-bw.jpg"
+           alt="Systemic Family Therapy logo"
+           width="80"
+           height="80"
+           loading="lazy">
+    </a>
+  </div>
 
-  <article class="footer-social">
-    <nav class="social-media">
+  <nav class="footer-menu" aria-label="Footer navigation">
+    <ul class="footer-links">
+      <li><a class="nav-link" href="../index.html">Home</a></li>
+      <li><a class="nav-link" href="services.html">Services</a></li>
+      <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
+      <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
+      <li><a class="nav-link" href="contacts.html">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <div class="footer-social">
+    <nav class="social-media" aria-label="Social media links">
       <ul>
-        <li><a href="https://www.linkedin.com/in/todorproykov/" title="Find me on LinkedIn" target="_blank"><img
-                src="../images/linkedin.jpg" alt="Find me on LinkedIn"></a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/todorproykov/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Find me on LinkedIn (opens in new tab)">
+            <img src="../images/linkedin.jpg"
+                 alt="LinkedIn logo"
+                 width="30"
+                 height="30"
+                 loading="lazy">
+          </a>
+        </li>
       </ul>
     </nav>
-  </article>
+  </div>
 
-  <!-- Centered copyright container -->
   <div class="footer-copyright">
     <p>&copy; 2024 - Dr Todor Proykov. All Rights Reserved.</p>
-    <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with
-      the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
+    <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
     <p>All logos and organisation names used here are property of their respective owners.</p>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<!-- Schema.org markup for better SEO -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Dr Todor Proykov - Professional Resources",
+    "description": "Professional resources and training opportunities for systemic family therapists",
+    "provider": {
+      "@type": "Person",
+      "name": "Dr Todor Proykov",
+      "jobTitle": "Systemic Family Psychotherapist"
+    },
+    "serviceType": "Professional Training and Resources",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Mental Health Professionals"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Individual Supervision",
+        "description": "One-on-one professional supervision sessions"
+      },
+      {
+        "@type": "Offer",
+        "name": "Group Supervision",
+        "description": "Group supervision programs for therapists"
+      },
+      {
+        "@type": "Offer",
+        "name": "Workshop Facilitation",
+        "description": "Professional development workshops"
+      }
+    ]
+  }
+</script>
 
-<!-- JAVASCRIPT TO TOGGLE THE HAMBURGER MENU ON MOBILE DEVICES ------------------------ -->
+<!-- Initialize menu functionality -->
 <script>
-  // JavaScript to toggle the menu
-  document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector("header nav ul");
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('#main-nav');
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('show');
+      });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (navMenu?.classList.contains('show') &&
+              !event.target.closest('.hamburger') &&
+              !event.target.closest('#main-nav')) {
+        navMenu.classList.remove('show');
+        hamburger?.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Handle keyboard navigation
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navMenu?.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        hamburger?.focus();
+      }
     });
   });
 </script>
 
-
+<!-- Defer main JavaScript -->
+<script src="../js/main.js" defer></script>
 </body>
 </html>

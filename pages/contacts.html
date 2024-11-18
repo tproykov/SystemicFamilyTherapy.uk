@@ -1,172 +1,302 @@
-<!-- pages/services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Dr Todor Proykov for systemic family therapy services. Book online consultations, therapy sessions, and professional supervision. Available via email, phone, and secure video platform.">
+  <meta name="keywords" content="family therapy contact, therapy booking, online consultation, Dr Todor Proykov, therapy rates">
+  <meta name="author" content="Dr Todor Proykov">
+
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+  <title>Contact - Systemic Family Therapy with Dr Todor Proykov</title>
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="../styles.css" as="style">
+  <link rel="preload" href="../js/main.js" as="script">
+  <link rel="preload" href="../images/logo-extended.jpg" as="image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Google Analytics - Load asynchronously -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-DZJSGW8GN8');
+    gtag('config', 'G-DZJSGW8GN8', {
+      'content_group': 'Contact Information'
+    });
   </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MHLWL5NJ');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacts - Systemic Family Therapy</title>
-  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Google Tag Manager - Load asynchronously -->
+  <script async>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHLWL5NJ');
+  </script>
 </head>
 
 <body>
-<header>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <nav>
-    <!-- Hamburger icon button for mobile -->
-    <button class="hamburger" aria-label="Toggle navigation">
-      <!-- Three lines to represent the hamburger icon -->
+<header role="banner">
+  <div class="logo-container">
+    <a class="nav-link" href="../index.html" aria-label="Home">
+      <img class="logo"
+           src="../images/logo-extended.jpg"
+           alt="Systemic Family Therapy logo"
+           width="200"
+           height="80"
+           loading="eager">
+    </a>
+  </div>
+  <nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="main-nav">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul>
+    <ul id="main-nav">
       <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
       <li class="nav-item"><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
       <li class="nav-item"><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
-      <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
-      <!-- The search and login buttons will be implemented at a later stage ------------------ -->
-      <!-- <li class="nav-item search-nav-item"><img src="images/search.png" alt="Search Icon"></li> -->
-      <!-- <li class="nav-item login-nav-item"><button class="btn login-btn">Login</button></li> -->
-      </li>
+      <li class="nav-item"><a class="nav-link" href="contacts.html" aria-current="page">Contacts</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="logo-container">
-  <a class="nav-link" href="../index.html"><img class="logo" src="../images/logo-extended.jpg" alt="Systemic Family Therapy logo"></a>
-</div>
-
-<main>
-  <section class="transparent-section">
-    <h1>Contact Information</h1>
+<main id="main-content" role="main">
+  <section class="transparent-section" aria-labelledby="page-title">
+    <h1 id="page-title">Contact Information</h1>
     <p>Get in touch to discuss how I can support you or your family.</p>
     <p>Please contact me if you would like to find out anything more about my services or to book an appointment:</p>
   </section>
 
-  <section class="fancy-frame">
+  <section class="fancy-frame" aria-labelledby="contact-methods">
+    <h2 id="contact-methods">How to reach me</h2>
 
     <div class="contact-methods">
-      <h2>How to reach me</h2>
-
-      <div class="contact-item">
-        <h3>Online consultation booking</h3>
+      <article class="contact-item" aria-labelledby="booking-title">
+        <h3 id="booking-title">Online consultation booking</h3>
         <p>Schedule your initial consultation through our secure booking system:</p>
-        <button class="btn booking-btn">Book Consultation</button>
-      </div>
+        <button class="btn booking-btn"
+                aria-label="Open online consultation booking system">
+          Book Consultation
+        </button>
+      </article>
 
-      <div class="contact-item">
-        <h3>Email enquiries</h3>
+      <article class="contact-item" aria-labelledby="email-title">
+        <h3 id="email-title">Email enquiries</h3>
         <p>For general enquiries, to discuss specific requirements or to book a session:</p>
-        <a href="mailto:todor@systemicfamilytherapy.uk">todor@systemicfamilytherapy.uk</a>
-      </div>
+        <a href="mailto:todor@systemicfamilytherapy.uk"
+           class="contact-link"
+           aria-label="Send email to todor at systemic family therapy dot uk">
+          todor@systemicfamilytherapy.uk
+        </a>
+      </article>
 
-      <div class="contact-item">
-        <h3>Telephone enquiries</h3>
-        <p>Please call me on +44 (0) 7515 355236. If I am not available to respond, please leave a voice message
-          with your number and I will call back.</p>
-      </div>
+      <article class="contact-item" aria-labelledby="phone-title">
+        <h3 id="phone-title">Telephone enquiries</h3>
+        <p>Please call me on <a href="tel:+447515355236" class="contact-link">+44 (0) 7515 355236</a>.
+          If I am not available to respond, please leave a voice message with your number and I will call back.</p>
+      </article>
     </div>
-
-
   </section>
-  <section class="fancy-frame">
 
+  <section class="fancy-frame" aria-labelledby="session-info">
     <div class="session-info">
-      <h2>Session information</h2>
-      <h3>Rates</h3>
-      <ul>
-        <li>Initial consultation (10-20 minutes) over the phone: Free</li>
-        <li>Individual therapy (50 minutes): £70</li>
-        <li>Couple therapy (60 minutes): £80</li>
-        <li>Family therapy (60 minutes): £80</li>
-        <li>Professional supervision (50 minutes): £80</li>
-      </ul>
+      <h2 id="session-info">Session Information</h2>
 
-      <h3>Online sessions</h3>
-      <p>All sessions are conducted via secure video platform. Upon booking, you will receive:</p>
-      <ul>
-        <li>Confirmation email with session details</li>
-        <li>Secure link to join the session</li>
-        <li>Pre-session questionnaire</li>
-        <li>Information about the therapy process</li>
-      </ul>
+      <article aria-labelledby="rates-title">
+        <h3 id="rates-title">Rates</h3>
+        <ul>
+          <li>Initial consultation (10-20 minutes) over the phone: <strong>Free</strong></li>
+          <li>Individual therapy (50 minutes): <strong>£70</strong></li>
+          <li>Couple therapy (60 minutes): <strong>£80</strong></li>
+          <li>Family therapy (60 minutes): <strong>£80</strong></li>
+          <li>Professional supervision (50 minutes): <strong>£80</strong></li>
+        </ul>
+      </article>
+
+      <article aria-labelledby="online-sessions">
+        <h3 id="online-sessions">Online sessions</h3>
+        <p>All sessions are conducted via secure video platform. Upon booking, you will receive:</p>
+        <ul>
+          <li>Confirmation email with session details</li>
+          <li>Secure link to join the session</li>
+          <li>Pre-session questionnaire</li>
+          <li>Information about the therapy process</li>
+        </ul>
+      </article>
     </div>
   </section>
 </main>
 
-<footer class="page-footer">
-  <article class="footer-logo-container">
-    <a class="nav-link" href="../index.html"><img src="../images/logo-bw.jpg" alt=""></a>
-  </article>
-  <article class="footer-menu">
-    <nav class="footer-nav">
-      <ul class="footer-links">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
-        <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
-        <li><a class="nav-link" href="contacts.html">Contacts</a></li>
-      </ul>
-    </nav>
-  </article>
+<footer class="page-footer" role="contentinfo">
+  <div class="footer-logo-container">
+    <a class="nav-link" href="../index.html" aria-label="Home">
+      <img src="../images/logo-bw.jpg"
+           alt="Systemic Family Therapy logo"
+           width="80"
+           height="80"
+           loading="lazy">
+    </a>
+  </div>
 
-  <article class="footer-social">
-    <nav class="social-media">
+  <nav class="footer-menu" aria-label="Footer navigation">
+    <ul class="footer-links">
+      <li><a class="nav-link" href="../index.html">Home</a></li>
+      <li><a class="nav-link" href="services.html">Services</a></li>
+      <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
+      <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
+      <li><a class="nav-link" href="contacts.html">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <div class="footer-social">
+    <nav class="social-media" aria-label="Social media links">
       <ul>
-        <li><a href="https://www.linkedin.com/in/todorproykov/" title="Find me on LinkedIn" target="_blank"><img
-                src="../images/linkedin.jpg" alt="Find me on LinkedIn"></a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/todorproykov/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Find me on LinkedIn (opens in new tab)">
+            <img src="../images/linkedin.jpg"
+                 alt="LinkedIn logo"
+                 width="30"
+                 height="30"
+                 loading="lazy">
+          </a>
+        </li>
       </ul>
     </nav>
-  </article>
+  </div>
 
-  <!-- Centered copyright container -->
   <div class="footer-copyright">
     <p>&copy; 2024 - Dr Todor Proykov. All Rights Reserved.</p>
-    <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with
-      the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
+    <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
     <p>All logos and organisation names used here are property of their respective owners.</p>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<!-- Schema.org markup for better SEO -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Dr Todor Proykov - Systemic Family Therapy",
+    "description": "Contact information and booking details for systemic family therapy services",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Dr Todor Proykov - Systemic Family Therapy",
+      "telephone": "+447515355236",
+      "email": "todor@systemicfamilytherapy.uk",
+      "priceRange": "££",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      }
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Initial Consultation",
+        "description": "10-20 minute phone consultation",
+        "price": "0",
+        "priceCurrency": "GBP"
+      },
+      {
+        "@type": "Offer",
+        "name": "Individual Therapy",
+        "description": "50 minute session",
+        "price": "70",
+        "priceCurrency": "GBP"
+      },
+      {
+        "@type": "Offer",
+        "name": "Couple/Family Therapy",
+        "description": "60 minute session",
+        "price": "80",
+        "priceCurrency": "GBP"
+      }
+    ]
+  }
+</script>
 
-<!-- JAVASCRIPT TO TOGGLE THE HAMBURGER MENU ON MOBILE DEVICES ------------------------ -->
+<!-- Initialize menu functionality -->
 <script>
-  // JavaScript to toggle the menu
-  document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector("header nav ul");
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('#main-nav');
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('show');
+      });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (navMenu?.classList.contains('show') &&
+              !event.target.closest('.hamburger') &&
+              !event.target.closest('#main-nav')) {
+        navMenu.classList.remove('show');
+        hamburger?.setAttribute('aria-expanded', 'false');
+      }
     });
+
+    // Handle keyboard navigation
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navMenu?.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        hamburger?.focus();
+      }
+    });
+
+    // Track booking button clicks
+    const bookingBtn = document.querySelector('.booking-btn');
+    if (bookingBtn) {
+      bookingBtn.addEventListener('click', () => {
+        gtag('event', 'booking_attempt', {
+          'event_category': 'Engagement',
+          'event_label': 'Consultation Booking'
+        });
+      });
+    }
   });
 </script>
 
-
-
+<!-- Defer main JavaScript -->
+<script src="../js/main.js" defer></script>
 </body>
 </html>

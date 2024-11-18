@@ -1,116 +1,123 @@
-<!-- pages/services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional systemic family therapy services offered by Dr Todor Proykov, including family therapy, couple therapy, individual therapy, and clinical supervision. All sessions conducted online via secure platform.">
+    <meta name="keywords" content="family therapy, couple therapy, individual therapy, clinical supervision, online therapy, Dr Todor Proykov">
+    <meta name="author" content="Dr Todor Proykov">
+
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <title>Services - Systemic and Family Therapy with Dr Proykov</title>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    <link rel="preload" href="../images/logo-extended.jpg" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Google Analytics - Load asynchronously -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-DZJSGW8GN8');
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MHLWL5NJ');</script>
-    <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Systemic and Family Therapy with Dr Proykov</title>
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico"/>
-    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Google Tag Manager - Load asynchronously -->
+    <script async>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MHLWL5NJ');
+    </script>
 </head>
 
 <body>
-
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHLWL5NJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<header>
-    <nav>
-        <!-- Hamburger icon button for mobile -->
-        <button class="hamburger" aria-label="Toggle navigation">
-            <!-- Three lines to represent the hamburger icon -->
+<header role="banner">
+    <div class="logo-container">
+        <a class="nav-link" href="../index.html" aria-label="Home">
+            <img class="logo"
+                 src="../images/logo-extended.jpg"
+                 alt="Systemic Family Therapy logo"
+                 width="200"
+                 height="80"
+                 loading="eager">
+        </a>
+    </div>
+    <nav role="navigation" aria-label="Main navigation">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
         <ul>
             <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html" aria-current="page">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
             <li class="nav-item"><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
             <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
-            <!-- The search and login buttons will be implemented at a later stage ------------------ -->
-            <!-- <li class="nav-item search-nav-item"><img src="images/search.png" alt="Search Icon"></li> -->
-            <!-- <li class="nav-item login-nav-item"><button class="btn login-btn">Login</button></li> -->
         </ul>
     </nav>
 </header>
 
-<div class="logo-container">
-    <a class="nav-link" href="../index.html"><img class="logo" src="../images/logo-extended.jpg"
-                                                  alt="Systemic Family Therapy logo"></a>
-</div>
-
-<main>
-    <section class="transparent-section">
-        <h1>Services - Systemic and Family Therapy with Dr Proykov</h1>
-        <p>I provide specialised support for families, couples, and individuals through evidence-based systemic therapy
-            approaches. I offer a comprehensive range of online therapeutic services including individual therapy
-            sessions, family therapy sessions, couple therapy, online consultations, and clinical supervision.
+<main id="main-content" role="main">
+    <section class="transparent-section" aria-labelledby="services-title">
+        <h1 id="services-title">Services - Systemic and Family Therapy with Dr Proykov</h1>
+        <p>I provide specialised support for families, couples, and individuals through evidence-based systemic therapy approaches. I offer a comprehensive range of online therapeutic services including individual therapy sessions, family therapy sessions, couple therapy, online consultations, and clinical supervision.</p>
     </section>
 
-    <section class="fancy-frame"><h3>All therapy sessions are conducted online via secure GDPR-compliant video
-        platform.</h3></section>
+    <section class="fancy-frame" aria-label="Online therapy information">
+        <h2>Online Therapy Sessions</h2>
+        <p>All therapy sessions are conducted online via secure GDPR-compliant video platform.</p>
+    </section>
 
-    <section class="fancy-frame">
+    <section class="fancy-frame" aria-labelledby="specialized-therapy">
         <div class="tool-items-container">
             <div class="tool-item">
-                <img src="../images/separated_parents.jpg" alt="Separated parents" class="tool-item-image">
+                <img src="../images/separated_parents.jpg"
+                     alt="Illustration representing separated parents"
+                     class="tool-item-image"
+                     width="200"
+                     height="200"
+                     loading="lazy">
                 <div class="tool-item-content">
-
-                    <h3>Family therapy with separated parents experiencing child contact difficulties</h3>
+                    <h2 id="specialized-therapy">Family therapy with separated parents experiencing child contact difficulties</h2>
                     <p>This highly specialised type of therapy is aimed to:</p>
                     <ul>
                         <li>Improve the communication between parents</li>
                         <li>Address difficulties in the child contact</li>
-                        <li>Support parents in responding to children’s feelings and behaviours</li>
+                        <li>Support parents in responding to children's feelings and behaviours</li>
                         <li>Work on strategies of both parents meeting their own emotional needs</li>
                     </ul>
-                    <p></p>
-                    <button class="btn download-btn">Download information package</button>
+                    <button class="btn download-btn" aria-label="Download information package about separated parents therapy">Download information package</button>
                 </div>
             </div>
         </div>
-
     </section>
 
-    <section class="fancy-frame">
-        <section class="container">
-
-            <div class="service-item">
-                <h3>Family Therapy</h3>
+    <section class="fancy-frame" aria-label="Core services">
+        <div class="container">
+            <div class="service-item" aria-labelledby="family-therapy">
+                <h2 id="family-therapy">Family Therapy</h2>
                 <ul>
                     <li>Family conflict resolution</li>
                     <li>Improving parent-child relationships</li>
@@ -119,11 +126,11 @@
                     <li>Supporting separated families make arrangements for the children</li>
                     <li>Blended family integration</li>
                 </ul>
-                <p>Sessions: 60 minutes | Available evenings and weekends</p>
+                <p><strong>Sessions:</strong> 60 minutes | Available evenings and weekends</p>
             </div>
 
-            <div class="service-item">
-                <h3>Couple Therapy</h3>
+            <div class="service-item" aria-labelledby="couple-therapy">
+                <h2 id="couple-therapy">Couple Therapy</h2>
                 <p>Specialised support for couples facing challenges or seeking to strengthen their relationship:</p>
                 <ul>
                     <li>Communication difficulties</li>
@@ -132,15 +139,15 @@
                     <li>Pre-marital counseling</li>
                     <li>Life transition support</li>
                 </ul>
-                <p>Sessions: 60 minutes | Available evenings and weekends</p>
+                <p><strong>Sessions:</strong> 60 minutes | Available evenings and weekends</p>
             </div>
-        </section>
+        </div>
     </section>
 
-    <section class="fancy-frame">
-        <section class="container">
-            <div class="service-item">
-                <h3>Individual Therapy</h3>
+    <section class="fancy-frame" aria-label="Additional services">
+        <div class="container">
+            <div class="service-item" aria-labelledby="individual-therapy">
+                <h2 id="individual-therapy">Individual Therapy</h2>
                 <p>Personal therapeutic support using systemic approaches for:</p>
                 <ul>
                     <li>Anxiety and depression</li>
@@ -150,84 +157,116 @@
                     <li>Life transitions</li>
                     <li>Work-related stress</li>
                 </ul>
-                <p>Sessions: 50 minutes | Available evenings and weekends</p>
+                <p><strong>Sessions:</strong> 50 minutes | Available evenings and weekends</p>
             </div>
 
-            <div class="service-item">
-                <h3>Professional Supervision</h3>
+            <div class="service-item" aria-labelledby="professional-supervision">
+                <h2 id="professional-supervision">Professional Supervision</h2>
                 <ul>
                     <li>Trainee family therapists</li>
                     <li>Qualified therapists</li>
                     <li>Mental health professionals</li>
                 </ul>
-                <p>Sessions: 50 minutes. Individual or group supervision available evenings and weekends</p>
+                <p><strong>Sessions:</strong> 50 minutes | Individual or group supervision available evenings and weekends</p>
             </div>
-        </section>
-    </section>
-
-    <section class="fancy-frame">
-
-        <div class="booking-info">
-            <h3>Booking Information</h3>
-            <p>Initial consultations over the phone are available to discuss your needs and determine the most
-                appropriate approach. All sessions are conducted online via a secure, GDPR-compliant platform.</p>
-            <p>For rates and availability, please contact me. Information how to do so you can find on the <a
-                    href="contacts.html">Contacts</a> page.</p>
         </div>
     </section>
 
+    <section class="fancy-frame" aria-labelledby="booking-info">
+        <div class="booking-info">
+            <h2 id="booking-info">Booking Information</h2>
+            <p>Initial consultations over the phone are available to discuss your needs and determine the most appropriate approach. All sessions are conducted online via a secure, GDPR-compliant platform.</p>
+            <p>For rates and availability, please contact me. Information how to do so you can find on the <a href="contacts.html">Contacts</a> page.</p>
+        </div>
+    </section>
 </main>
 
-<footer class="page-footer">
-    <article class="footer-logo-container">
-        <a class="nav-link" href="../index.html"><img src="../images/logo-bw.jpg" alt=""></a>
-    </article>
-    <article class="footer-menu">
-        <nav class="footer-nav">
-            <ul class="footer-links">
-                <li><a class="nav-link" href="../index.html">Home</a></li>
-                <li><a class="nav-link" href="services.html">Services</a></li>
-                <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
-                <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
-                <li><a class="nav-link" href="contacts.html">Contacts</a></li>
-            </ul>
-        </nav>
-    </article>
+<footer class="page-footer" role="contentinfo">
+    <div class="footer-logo-container">
+        <a class="nav-link" href="../index.html" aria-label="Home">
+            <img src="../images/logo-bw.jpg"
+                 alt="Systemic Family Therapy logo"
+                 width="80"
+                 height="80"
+                 loading="lazy">
+        </a>
+    </div>
 
-    <article class="footer-social">
-        <nav class="social-media">
+    <nav class="footer-menu" aria-label="Footer navigation">
+        <ul class="footer-links">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="services.html">Services</a></li>
+            <li><a class="nav-link" href="self-help-tools.html">Self-help tools</a></li>
+            <li><a class="nav-link" href="for-practitioners.html">For practitioners</a></li>
+            <li><a class="nav-link" href="contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <div class="footer-social">
+        <nav class="social-media" aria-label="Social media links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/todorproykov/" title="Find me on LinkedIn" target="_blank"><img
-                        src="../images/linkedin.jpg" alt="Find me on LinkedIn"></a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/todorproykov/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Find me on LinkedIn (opens in new tab)">
+                        <img src="../images/linkedin.jpg"
+                             alt="LinkedIn logo"
+                             width="30"
+                             height="30"
+                             loading="lazy">
+                    </a>
+                </li>
             </ul>
         </nav>
-    </article>
+    </div>
 
-    <!-- Centered copyright container -->
     <div class="footer-copyright">
         <p>&copy; 2024 - Dr Todor Proykov. All Rights Reserved.</p>
-        <p>The code of this website, the majority of the images and audio, and some of the materials here have been
-            prepared with
-            the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
+        <p>The code of this website, the majority of the images and audio, and some of the materials here have been prepared with the help of AI. The materials have been carefully edited on the basis of my professional experience.</p>
         <p>All logos and organisation names used here are property of their respective owners.</p>
     </div>
 </footer>
 
-<script src="../js/main.js"></script>
-
-<!-- JAVASCRIPT TO TOGGLE THE HAMBURGER MENU ON MOBILE DEVICES ------------------------ -->
-<script>
-    // JavaScript to toggle the menu
-    document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector("header nav ul");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
-        });
-    });
+<!-- Schema.org markup for better SEO -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Dr Todor Proykov - Systemic Family Therapy",
+        "image": "../images/logo-extended.jpg",
+        "@id": "https://yourwebsite.com",
+        "url": "https://yourwebsite.com",
+        "telephone": "",
+        "priceRange": "££",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UK"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "",
+            "longitude": ""
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ]
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/todorproykov/"
+        ]
+    }
 </script>
 
-
+<!-- Defer non-critical JavaScript -->
+<script src="../js/main.js" defer></script>
 </body>
 </html>
