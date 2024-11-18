@@ -13,70 +13,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Function to handle HAMBURGER menu ----------------------------------------------------------------
+    // Basic hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('header nav ul');
-    const overlay = document.querySelector('.menu-overlay');
-    const body = document.body;
-    let isMenuOpen = false;
 
-    function toggleMenu(event) {
-        event.preventDefault(); // Prevent any default behavior
-        event.stopPropagation(); // Stop event bubbling
-
-        isMenuOpen = !isMenuOpen;
-
-        if (isMenuOpen) {
-            navMenu.classList.add('show');
-            body.classList.add('menu-open');
-            if (overlay) overlay.classList.add('show');
-
-            // Add click outside listener
-            setTimeout(() => {
-                document.addEventListener('click', closeMenuOnClickOutside);
-            }, 0);
-        } else {
-            navMenu.classList.remove('show');
-            body.classList.remove('menu-open');
-            if (overlay) overlay.classList.remove('show');
-            document.removeEventListener('click', closeMenuOnClickOutside);
-        }
-    }
-
-    function closeMenuOnClickOutside(event) {
-        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-            isMenuOpen = false;
-            navMenu.classList.remove('show');
-            body.classList.remove('menu-open');
-            if (overlay) overlay.classList.remove('show');
-            document.removeEventListener('click', closeMenuOnClickOutside);
-        }
-    }
-
-    // Touch event handlers
-    function handleTouchStart(event) {
-        if (event.touches.length === 1) {
-            toggleMenu(event);
-        }
-    }
-
-    // Add event listeners
     if (hamburger) {
-        hamburger.addEventListener('click', toggleMenu);
-        hamburger.addEventListener('touchstart', handleTouchStart, { passive: false });
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+        });
     }
 
-    // Close menu on link click
+    // Close menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            isMenuOpen = false;
+        link.addEventListener('click', function() {
             navMenu.classList.remove('show');
-            body.classList.remove('menu-open');
-            if (overlay) overlay.classList.remove('show');
         });
     });
-
 
     // Function to handle AUDIO players ---------------------------------------------------------------
     function handleAudioPlayer(buttonSelector, playerSelector, audioPath) {
