@@ -8,10 +8,8 @@
   <meta name="author" content="Dr Todor Proykov">
 
   <!-- Security headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+  <!-- Replace your current CSP meta tag with this -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
 
   <title>Contact - Systemic Family Therapy with Dr Todor Proykov</title>
 
@@ -29,23 +27,7 @@
 
   <!-- Google Analytics - Load asynchronously -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DZJSGW8GN8', {
-      'content_group': 'Contact Information'
-    });
-  </script>
-
-  <!-- Google Tag Manager - Load asynchronously -->
-  <script async>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MHLWL5NJ');
-  </script>
+  <script src="../js/analytics.js" defer></script>
 </head>
 
 <body>
@@ -199,56 +181,7 @@
 </footer>
 
 <!-- Schema.org markup for better SEO -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact Dr Todor Proykov - Systemic Family Therapy",
-    "description": "Contact information and booking details for systemic family therapy services",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Dr Todor Proykov - Systemic Family Therapy",
-      "telephone": "+447515355236",
-      "email": "todor@systemicfamilytherapy.uk",
-      "priceRange": "££",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ]
-      }
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Initial Consultation",
-        "description": "10-20 minute phone consultation",
-        "price": "0",
-        "priceCurrency": "GBP"
-      },
-      {
-        "@type": "Offer",
-        "name": "Individual Therapy",
-        "description": "50 minute session",
-        "price": "70",
-        "priceCurrency": "GBP"
-      },
-      {
-        "@type": "Offer",
-        "name": "Couple/Family Therapy",
-        "description": "60 minute session",
-        "price": "80",
-        "priceCurrency": "GBP"
-      }
-    ]
-  }
-</script>
+<script src="../js/schema.js" defer></script>
 
 <!-- Initialize menu functionality -->
 <script>

@@ -134,18 +134,28 @@ class NavigationManager {
         this.navLinks = utils.$$(CONFIG.SELECTORS.NAV_LINKS);
         this.isMenuOpen = false;
 
-        this.init();
+        if (this.hamburger && this.navMenu) {
+            this.init();
+        }
     }
 
     init() {
-        utils.addEvent(this.hamburger, 'click', () => this.toggleMenu());
+        // Use a more direct approach for the click handler
+        this.hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggleMenu();
+        });
 
+        // Ensure links close the menu
         this.navLinks.forEach(link => {
-            utils.addEvent(link, 'click', () => this.closeMenu());
+            link.addEventListener('click', () => {
+                this.closeMenu();
+            });
         });
 
         // Close menu when clicking outside
-        utils.addEvent(document, 'click', (event) => {
+        document.addEventListener('click', (event) => {
             if (this.isMenuOpen &&
                 !event.target.closest(CONFIG.SELECTORS.HAMBURGER) &&
                 !event.target.closest(CONFIG.SELECTORS.NAV_MENU)) {
@@ -154,7 +164,7 @@ class NavigationManager {
         });
 
         // Handle keyboard navigation
-        utils.addEvent(document, 'keydown', (event) => {
+        document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && this.isMenuOpen) {
                 this.closeMenu();
                 this.hamburger?.focus();
@@ -164,14 +174,17 @@ class NavigationManager {
 
     toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
-        this.hamburger?.setAttribute('aria-expanded', this.isMenuOpen);
-        this.navMenu?.classList.toggle('show');
+        this.hamburger.setAttribute('aria-expanded', String(this.isMenuOpen));
+        this.navMenu.classList.toggle('show');
+
+        // Force a reflow to ensure the menu shows
+        window.getComputedStyle(this.navMenu).display;
     }
 
     closeMenu() {
         this.isMenuOpen = false;
-        this.hamburger?.setAttribute('aria-expanded', 'false');
-        this.navMenu?.classList.remove('show');
+        this.hamburger.setAttribute('aria-expanded', 'false');
+        this.navMenu.classList.remove('show');
     }
 }
 

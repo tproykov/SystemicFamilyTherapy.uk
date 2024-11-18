@@ -10,11 +10,8 @@
     <meta name="author" content="Dr Todor Proykov">
 
     <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <!-- Replace your current CSP meta tag with this -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
 
     <title>Self-help Tools - Systemic Family Therapy</title>
 
@@ -32,34 +29,7 @@
 
     <!-- Google Analytics - Load asynchronously -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZJSGW8GN8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-DZJSGW8GN8', {
-            'content_group': 'Self-help Resources'
-        });
-    </script>
-
-    <!-- Google Tag Manager - Load asynchronously -->
-    <script async>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MHLWL5NJ');
-    </script>
+    <script src="../js/analytics.js" defer></script>
 </head>
 
 <body>
@@ -534,46 +504,7 @@
 </footer>
 
 <!-- Schema.org markup for better SEO -->
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Self-help Tools - Systemic Family Therapy",
-        "description": "Free self-help resources and tools for families, including guides for separated parents, communication tools, and emotional regulation techniques.",
-        "provider": {
-            "@type": "Person",
-            "name": "Dr Todor Proykov",
-            "jobTitle": "Systemic Family Psychotherapist"
-        },
-        "offers": {
-            "@type": "Offer",
-            "availability": "http://schema.org/InStock",
-            "price": "0",
-            "priceCurrency": "GBP"
-        },
-        "audience": {
-            "@type": "Audience",
-            "audienceType": "Families and individuals seeking therapeutic support"
-        },
-        "educationalLevel": "Beginner",
-        "learningResourceType": "Self-help guide",
-        "isAccessibleForFree": true,
-        "hasPart": [
-            {
-                "@type": "CreativeWork",
-                "name": "High Conflict Separated Parents: Survival's Guide",
-                "contentUrl": "../files/sphc_survival_guide.pdf",
-                "encodingFormat": "application/pdf"
-            },
-            {
-                "@type": "AudioObject",
-                "name": "High Conflict Separated Parents: Survival's Guide Audio",
-                "contentUrl": "../files/sphc_survival_guide_audio.mp3",
-                "encodingFormat": "audio/mpeg"
-            }
-        ]
-    }
-</script>
+<script src="../js/schema.js" defer></script>
 
 <!-- Initialize audio players and event handlers -->
 <script>
