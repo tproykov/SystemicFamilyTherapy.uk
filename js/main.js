@@ -220,7 +220,7 @@ class AudioPlayerManager {
             const player = utils.$(config.playerSelector);
 
             if (button && player) {
-                this.players.set(config.playerSelector, {button, player, audio: player.querySelector('audio')});
+                this.players.set(config.playerSelector, { button, player, audio: player.querySelector('audio') });
                 utils.addEvent(button, 'click', () => this.togglePlayer(config.playerSelector));
             }
         });
@@ -230,13 +230,12 @@ class AudioPlayerManager {
         const playerData = this.players.get(playerSelector);
         if (!playerData) return;
 
-        const {button, player, audio} = playerData;
-        const isVisible = player.style.display !== 'none';
+        const { button, player, audio } = playerData;
 
-        // Stop all other players
+        // Hide all other players and stop their audio
         this.players.forEach((data, key) => {
             if (key !== playerSelector) {
-                data.player.style.display = 'none';
+                data.player.classList.remove('show');
                 data.audio?.pause();
                 data.button.textContent = CONFIG.BUTTON_TEXT.PLAY;
                 data.button.setAttribute('aria-expanded', 'false');
@@ -244,12 +243,26 @@ class AudioPlayerManager {
         });
 
         // Toggle current player
-        player.style.display = isVisible ? 'none' : 'block';
-        button.textContent = isVisible ? CONFIG.BUTTON_TEXT.PLAY : CONFIG.BUTTON_TEXT.PAUSE;
-        button.setAttribute('aria-expanded', !isVisible);
+        const isVisible = player.classList.contains('show');
+        player.classList.toggle('show');
 
         if (audio) {
-            isVisible ? audio.pause() : audio.play();
+            if (!isVisible) {
+                audio.play()
+                    .then(() => {
+                        button.textContent = CONFIG.BUTTON_TEXT.PAUSE;
+                        button.setAttribute('aria-expanded', 'true');
+                    })
+                    .catch(error => {
+                        console.error('Audio playback failed:', error);
+                        button.textContent = CONFIG.BUTTON_TEXT.PLAY;
+                        button.setAttribute('aria-expanded', 'false');
+                    });
+            } else {
+                audio.pause();
+                button.textContent = CONFIG.BUTTON_TEXT.PLAY;
+                button.setAttribute('aria-expanded', 'false');
+            }
         }
     }
 }
