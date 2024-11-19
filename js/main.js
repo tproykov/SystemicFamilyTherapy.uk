@@ -126,67 +126,85 @@ const utils = {
     }
 };
 
-// Navigation Manager
 class NavigationManager {
     constructor() {
-        this.hamburger = utils.$(CONFIG.SELECTORS.HAMBURGER);
-        this.navMenu = utils.$(CONFIG.SELECTORS.NAV_MENU);
-        this.navLinks = utils.$$(CONFIG.SELECTORS.NAV_LINKS);
-        this.isMenuOpen = false;
+        console.log('NavigationManager initializing...');
+        this.hamburger = document.querySelector('.hamburger');
+        this.nav = document.querySelector('header nav');
 
-        if (this.hamburger && this.navMenu) {
-            this.init();
+        console.log('Hamburger element:', this.hamburger);
+        console.log('Nav element:', this.nav);
+
+        if (this.hamburger && this.nav) {
+            console.log('Adding event listeners...');
+            // Bind the methods to the class instance
+            this.toggleMenu = this.toggleMenu.bind(this);
+            this.handleClickOutside = this.handleClickOutside.bind(this);
+
+            // Add event listeners
+            this.hamburger.addEventListener('click', this.toggleMenu);
+            document.addEventListener('click', this.handleClickOutside);
         }
     }
 
-    init() {
-        // Use a more direct approach for the click handler
-        this.hamburger.addEventListener('click', (e) => {
+    toggleMenu(e) {
+        if (e) {
             e.preventDefault();
             e.stopPropagation();
+        }
+        console.log('Toggling menu');
+        this.nav.classList.toggle('show');
+        const isExpanded = this.nav.classList.contains('show');
+        this.hamburger.setAttribute('aria-expanded', isExpanded);
+    }
+
+    handleClickOutside(e) {
+        if (this.nav.classList.contains('show') &&
+            !this.hamburger.contains(e.target) &&
+            !this.nav.contains(e.target)) {
             this.toggleMenu();
-        });
-
-        // Ensure links close the menu
-        this.navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                this.closeMenu();
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (this.isMenuOpen &&
-                !event.target.closest(CONFIG.SELECTORS.HAMBURGER) &&
-                !event.target.closest(CONFIG.SELECTORS.NAV_MENU)) {
-                this.closeMenu();
-            }
-        });
-
-        // Handle keyboard navigation
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && this.isMenuOpen) {
-                this.closeMenu();
-                this.hamburger?.focus();
-            }
-        });
-    }
-
-    toggleMenu() {
-        this.isMenuOpen = !this.isMenuOpen;
-        this.hamburger.setAttribute('aria-expanded', String(this.isMenuOpen));
-        this.navMenu.classList.toggle('show');
-
-        // Force a reflow to ensure the menu shows
-        window.getComputedStyle(this.navMenu).display;
-    }
-
-    closeMenu() {
-        this.isMenuOpen = false;
-        this.hamburger.setAttribute('aria-expanded', 'false');
-        this.navMenu.classList.remove('show');
+        }
     }
 }
+
+// Initialize when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded, initializing NavigationManager');
+        new NavigationManager();
+    });
+} else {
+    console.log('DOM already loaded, initializing NavigationManager');
+    new NavigationManager();
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new NavigationManager();
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    new NavigationManager();
+});
+
+toggleMenu()
+{
+    this.isMenuOpen = !this.isMenuOpen;
+    this.hamburger.setAttribute('aria-expanded', String(this.isMenuOpen));
+    this.navMenu.classList.toggle('show');
+
+    // Force a reflow to ensure the menu shows
+    window.getComputedStyle(this.navMenu).display;
+}
+
+closeMenu()
+{
+    this.isMenuOpen = false;
+    this.hamburger.setAttribute('aria-expanded', 'false');
+    this.navMenu.classList.remove('show');
+}
+
 
 // Audio Player Manager
 class AudioPlayerManager {
@@ -202,7 +220,7 @@ class AudioPlayerManager {
             const player = utils.$(config.playerSelector);
 
             if (button && player) {
-                this.players.set(config.playerSelector, { button, player, audio: player.querySelector('audio') });
+                this.players.set(config.playerSelector, {button, player, audio: player.querySelector('audio')});
                 utils.addEvent(button, 'click', () => this.togglePlayer(config.playerSelector));
             }
         });
@@ -212,7 +230,7 @@ class AudioPlayerManager {
         const playerData = this.players.get(playerSelector);
         if (!playerData) return;
 
-        const { button, player, audio } = playerData;
+        const {button, player, audio} = playerData;
         const isVisible = player.style.display !== 'none';
 
         // Stop all other players
