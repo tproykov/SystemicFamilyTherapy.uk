@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-/* ==========================================================================
+/* ==================================================================================
    TABLE OF CONTENTS
    1. CSS Custom Properties (Variables)
    2. Base Styles & Typography
@@ -12,11 +12,12 @@
    8. Utility Classes
    9. Accessibility
    10. Media Queries
-   ========================================================================== */
+   ================================================================================== */
 
-/* ==========================================================================
+/* ==================================================================================
    1. CSS Custom Properties (Variables)
-   ========================================================================== */
+   ================================================================================== */
+
 :root {
     /* Colors */
     --primary-color: #8ec545;
@@ -55,19 +56,16 @@
     --z-logo: 998;
 }
 
-/* ==========================================================================
+/* ==================================================================================
    2. Base Styles & Typography
-   ========================================================================== */
-/* Import font only once at the top level */
+   ================================================================================== */
 
-/* Reset */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Base styles */
 body {
     font-family: var(--font-family), sans-serif;
     font-size: var(--base-font-size);
@@ -124,9 +122,10 @@ img {
     display: block;
 }
 
-/* ==========================================================================
+/* ==================================================================================
    3. Layout & Grid
-   ========================================================================== */
+   ================================================================================== */
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -144,7 +143,6 @@ main {
     z-index: 1;
 }
 
-/* Grid layouts */
 .resource-container {
     display: flex;
     flex-wrap: wrap;
@@ -169,10 +167,10 @@ main {
     margin: 0 auto;
 }
 
-/* ==========================================================================
+/* ==================================================================================
    4. Header & Navigation
-   ========================================================================== */
-/* Header */
+   ================================================================================== */
+
 header {
     position: relative;
     background: var(--bg-color);
@@ -189,7 +187,6 @@ header {
     position: relative;
 }
 
-/* Logo */
 .logo-container {
     position: absolute;
     top: -8px; /* Aligned with the top border of header */
@@ -203,7 +200,6 @@ header {
 / * Increase if needed * / height: auto;
 }
 
-/* Navigation */
 header nav {
     flex: 1;
     display: flex;
@@ -222,7 +218,6 @@ header nav ul {
     margin: 0 var(--spacing-sm);
 }
 
-/* Nav Link Styles */
 .nav-link {
     text-transform: uppercase;
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -233,7 +228,6 @@ header nav ul {
     color: var(--primary-color);
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -256,7 +250,7 @@ header nav ul {
     transition: transform var(--transition-speed) ease;
 }
 
-/* Skip Link - Accessibility */
+/* Accessibility */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -272,10 +266,10 @@ header nav ul {
     top: 0;
 }
 
-/* ==========================================================================
+/* ==================================================================================
    5. Main Content Components
-   ========================================================================== */
-/* Hero Section */
+   ================================================================================== */
+
 .transparent-section {
     color: white;
     background: rgba(141, 200, 71, 0.5) url("/images/img02.jpg") no-repeat center;
@@ -297,7 +291,6 @@ header nav ul {
     z-index: -1;
 }
 
-/* Content Sections */
 .fancy-frame {
     padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md) var(--spacing-xl);
     margin: var(--spacing-lg) 110px var(--spacing-lg) 50px;
@@ -307,7 +300,6 @@ header nav ul {
     box-shadow: 0 2px 5px var(--shadow-color);
 }
 
-/* Tool Items */
 .tool-item {
     display: flex;
     gap: var(--spacing-md);
@@ -331,7 +323,6 @@ header nav ul {
     flex: 1;
 }
 
-/* Audio Player */
 .audio-player {
     display: none; /* Hidden by default */
     margin-top: var(--spacing-md);
@@ -350,9 +341,10 @@ header nav ul {
     border-radius: var(--border-radius-sm);
 }
 
-/* ==========================================================================
+/* ==================================================================================
    6. Forms & Buttons
-   ========================================================================== */
+   ================================================================================== */
+
 .btn {
     background: var(--primary-color);
     color: white;
@@ -375,9 +367,10 @@ header nav ul {
     margin-top: var(--spacing-md);
 }
 
-/* ==========================================================================
+/* ==================================================================================
    7. Footer
-   ========================================================================== */
+   ================================================================================== */
+
 .page-footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
@@ -433,9 +426,8 @@ header nav ul {
     margin: 0;
 }
 
-/* LinkedIn Logo Size */
 .social-media img {
-    width: 50px; /* Same size as footer logo */
+    width: 50px;
     height: auto;
 }
 
@@ -445,9 +437,10 @@ header nav ul {
     margin-top: var(--spacing-md);
 }
 
-/* ==========================================================================
+/* ==================================================================================
    8. Utility Classes
-   ========================================================================== */
+   ================================================================================== */
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -463,10 +456,10 @@ header nav ul {
     display: none !important;
 }
 
-/* ==========================================================================
+/* ==================================================================================
    9. Media Queries
-   ========================================================================== */
-/* Mobile Styles - now includes tablets and smaller screens */
+   ================================================================================== */
+
 /* Add specific handling for larger screens */
 @media (min-width: 1200px) {
     .transparent-section {
